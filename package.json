@@ -1,0 +1,21 @@
+{
+  "name": "learning_html5",
+  "version": "1.0.0",
+  "description": "Learning HTML5",
+  "private": true,
+  "main": "README.md",
+  "author": "@alxgcrz",
+  "license": "CC-BY-4.0",
+  "homepage": "https://alxgcrz.com/html5.html",
+  "scripts": {
+    "pandoc:create": "pandoc -d custom",
+    "pandoc:copy": "copy *.html %npm_config_html%",
+    "pdf:create": "mdpdf README.md README.pdf",
+    "pdf:copy": "copy README.pdf %npm_config_pdf%",
+    "live": "live-server html5.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alxgcrz/_learning_html5_.git"
+  }
+}
