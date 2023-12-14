@@ -113,7 +113,77 @@ Un **elemento en línea** ocupa sólo el espacio delimitado por las etiquetas qu
 
 Los elementos de tipo en línea pueden contener otros elementos de tipo en línea y de tipo texto pero no elementos de tipo bloque.
 
-[Lista de elementos en bloque](https://developer.mozilla.org/es/docs/Glossary/Block-level_content) y [lista de elementos en línea](https://developer.mozilla.org/es/docs/orphaned/Web/HTML/Inline_elements).
+##### Listado de elementos de bloque
+
+- `<address>`
+- `<article>`
+- `<aside>`
+- `<audio>`
+- `<blockquote>`
+- `<canvas>`
+- `<dd>`
+- `<div>`
+- `<dl>`
+- `<fieldset>`
+- `<figcaption>`
+- `<figure>`
+- `<footer>`
+- `<form>`
+- `<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>`, `<h6>`
+- `<header>`
+- `<hgroup>`
+- `<hr>`
+- `<li>`
+- `<main>`
+- `<nav>`
+- `<noscript>`
+- `<ol>`
+- `<output>`
+- `<p>`
+- `<pre>`
+- `<section>`
+- `<table>`
+- `<tfoot>`
+- `<ul>`
+- `<video>`
+
+[Lista de elementos en bloque](https://developer.mozilla.org/es/docs/Glossary/Block-level_content)
+
+##### Listado de elementos en línea
+
+- `<b>`
+- `<big>`
+- `<i>`
+- `<small>`
+- `<tt>`
+- `<abbr>`
+- `<acronym>`
+- `<cite>`
+- `<code>`
+- `<dfn>`
+- `<em>`
+- `<kbd>`
+- `<strong>`
+- `<samp>`
+- `<time>`
+- `<var>`
+- `<a>`
+- `<bdo>`
+- `<img>`
+- `<map>`
+- `<object>`
+- `<g>`
+- `<script>`
+- `<span>`
+- `<sub>`
+- `<sup>`
+- `<button>`
+- `<input>`
+- `<label>`
+- `<select>`
+- `<textarea>`
+
+[Lista de elementos en línea](https://developer.mozilla.org/es/docs/orphaned/Web/HTML/Inline_elements)
 
 #### Etiquetas obsoletas
 
@@ -201,6 +271,19 @@ Aunque en principio podemos hacer esto en cualquier etiqueta HTML, es **obligato
 </html>
 ```
 
+Es perfectamente válido utilizar este atributo en un etiqueta concreta para indicar, por ejemplo, un idioma diferente al indicado en la etiqueta `<html>`:
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+  ...
+  <p lang="it">È perfettamente valido utilizzare questo attributo su un'etichetta specifica</p>
+  ...
+</html>
+```
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/dom.html#attr-lang)
+
 ##### El atributo _translate_ (traducción)
 
 En las etiquetas HTML se puede indicar el atributo `translate`, el cuál acepta los valores 'yes' y 'no'. Por defecto, aunque este atributo no sea añadido en una etiqueta, el valor por **defecto** que tiene es 'yes'. Por lo tanto, todas las etiquetas están marcadas como «traducibles».
@@ -217,7 +300,13 @@ Por ejemplo, mediante este atributo podemos indicar a herramientas como 'Google 
 
 Existe un atributo `dir` que permite al desarrollador indicar la **direccionalidad** del texto en el documento. Esto es ideal para idiomas en los que se escribe o lee de derecha a izquierda, en lugar de izquierda a derecha.
 
-El valor por **defecto** de este atributo es 'ltr' (left to right, de izquierda a derecha), pero podemos modificarlo y establecer el valor 'rtl' (right to left, de derecha a izquierda).
+El valor por **defecto** de este atributo es 'ltr' (left to right, de izquierda a derecha), pero podemos modificarlo y establecer el valor 'rtl' (right to left, de derecha a izquierda) o en **auto** para dejar que el _user agent_ detecte la dirección de escritura.
+
+```html
+<p lang="it" dir="auto">I contenuti dell'elemento sono esplicitamente isolati dal testo</p>
+```
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/dom.html#the-dir-attribute)
 
 #### Otros atributos comunes
 
@@ -450,6 +539,8 @@ Es un contenedor neutro, y aunque se puede utilizar para estructurar un document
 </article> 
 ```
 
+:bangbang: Este elemento es un elemento de **bloque**.
+
 [Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/grouping-content.html#the-div-element)
 
 ### Elemento `<span>`
@@ -466,6 +557,8 @@ El elemento `<span>` normalmente se utiliza para formatear de manera particular 
 <p>Unde consequatur amet itaque. Velit <span class="fondo-gris">rerum sed iusto</span> quae 
 consectetur voluptas temporibus.</p>
 ```
+
+:bangbang: Este elemento es un elemento **en línea**.
 
 [Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/text-level-semantics.html#the-span-element)
 
@@ -508,6 +601,8 @@ Desde HTML5.1, se pueden anidar elementos `<header>` y `<footer>` dentro de otro
 </article>  
 ```
 
+:bangbang: Este elemento es un elemento de **bloque**.
+
 [Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/sections.html#the-header-element)
 
 ### Elemento `<footer>`
@@ -516,11 +611,15 @@ El elemento `<footer` permite insertar una zona de visualización para los pies 
 
 Sin embargo, la utilización de `<footer>` no implica forzosamente el uso de `<header>`.
 
+:bangbang: Este elemento es un elemento de **bloque**.
+
 [Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/sections.html#the-footer-element)
 
 ### Elemento `<aside>`
 
 El elemento `<aside>` permite mostrar un contenido relacionado con un contenido principal al que se le asocia, como podría ser una barra de desplazamiento, una zona para _advertising_, etcétera...
+
+:bangbang: Este elemento es un elemento de **bloque**.
 
 [Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/sections.html#the-aside-element)
 
@@ -530,6 +629,8 @@ El elemento `<nav>` se utiliza para visualizar una barra de navegación con enla
 
 No es obligatorio incluir una barra de navegación ni tampoco está prohibido que haya varios elementos `<nav>` en un mismo documento HTML. Por ejemplo es posible tener un elemento `<nav>` dentro de un elemento `<header>` y otro elemento `<nav>` dentro de un elemento `<footer>`.
 
+:bangbang: Este elemento es un elemento de **bloque**.
+
 [Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/sections.html#the-nav-element)
 
 ### Elemento `<main>`
@@ -537,6 +638,8 @@ No es obligatorio incluir una barra de navegación ni tampoco está prohibido qu
 El elemento `<main>` permite indicar el contenido principal del documento. Este contenido debe ser único y no repetirse en el documento.
 
 Además, no debe utilizarse en el interior, como elemento incluido, de elementos como `<article>`, `<aside>`, `<footer>`, `<header>` o `<nav>`.
+
+:bangbang: Este elemento es un elemento de **bloque**.
 
 [Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/grouping-content.html#the-main-element)
 
@@ -546,13 +649,142 @@ El elemento `<section` permite agrupar los elementos que comparten una misma tem
 
 Esto permite agrupar en un mismo elemento un contenido estructurado, con su encabezado y su pie de página. La utilización de varios elementos `<section>` facilita estructurar un documento en secciones distintas.
 
+:bangbang: Este elemento es un elemento de **bloque**.
+
 [Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/sections.html#the-section-element)
 
 ### Elemento `<article>`
 
 El elemento `<article` permite insertir un contenido autónomo, es decir, un contenido reutilizable en cualquier parte del documento. Como indica su nombre, su uso más habitual es la creación de artículos en un blog.
 
+:bangbang: Este elemento es un elemento de **bloque**.
+
 [Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/sections.html#the-article-element)
+
+## Contenedores de texto
+
+Los contenedores de texto son un tipo de contenedores semánticos que se utilizan para visualizar textos.
+
+Estos contenedores son todos de tipo **bloque**, lo que implica que utilizarán toda la longitud del contenedor padre. Por lo tanto, el contenedor siguiente se mostrará en una nueva línea.
+
+Además, los navegadores insertar un espacio antes y después del bloque. Este comportamiento se puede modificar mediante reglas CSS.
+
+### Elementos de título `<hx>`
+
+Los elementos de título `<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>`, `<h6>` permiten insertar hasta seis niveles de títulos jerárquicos en un documento.
+
+Estos títulos tienen un fuerte significado semántico, siendo `<h1>` el más importante y `<h6>` el menos importante. Es aconsejable no saltarse ningún nivel.
+
+Además, es perfectamente válido repetir niveles de jerarquía en contenedores distintos, es decir, es posible utilizar un título `<h1>` en varios contenedores `<article>` por ejemplo.
+
+```html
+<body>
+  <h1>Let's call it a draw(ing surface)</h1>
+  <section>
+    <h2>Diving in</h2>
+  </section>
+  <section>
+    <h2>Simple shapes</h2>
+  </section>
+  <section>
+    <h2>Canvas coordinates</h2>
+    <section>
+      <h3>Canvas coordinates diagram</h3>
+    </section>
+  </section>
+  <section>
+    <h2>Paths</h2>
+  </section>
+</body>
+```
+
+:bangbang: Este elemento es un elemento de **bloque**.
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements)
+
+### Elemento de párrafo `<p>`
+
+El elemento `<p>` permite insertar el texto actual en un párrafo.
+
+```html
+<p>The little kitten gently seated herself on a piece of carpet.</p>
+
+<fieldset>
+  <legend>Personal information</legend>
+  <p>
+    <label>Name: <input name="n"></label>
+    <label><input name="anon" type="checkbox"> Hide from other users</label>
+  </p>
+  <p><label>Address: <textarea name="a"></textarea></label></p>
+</fieldset>
+```
+
+:bangbang: Este elemento es un elemento de **bloque**.
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/grouping-content.html#the-p-element)
+
+### Elemento de citas `<blockquote>`
+
+El elemento `<blockquote>` permite mostrar un texto extraído de un origen externo con un formato que lo distingue del texto normal. Este elemento sirve de contenedor para otros elementos como títulos, párrafo, imagen, etcétera...
+
+```html
+<blockquote>
+  <p>[Jane] then said she liked [...] fish.</p>
+</blockquote>
+```
+
+:bangbang: Este elemento es un elemento de **bloque**.
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/grouping-content.html#the-blockquote-element)
+
+### Elemento de direcciones `<address>`
+
+El elemento `<address>` se utiliza para mostrar direcciones de todo tipo dentro de un documento. Este elemento permite anidar otros elementos en su interior.
+
+```html
+<footer>
+  <address>
+    For more details, contact
+    <a href="mailto:js@example.com">John Smith</a>.
+  </address>
+  <p><small>© copyright 2038 Example Corp.</small></p>
+</footer>
+```
+
+:bangbang: Este elemento es un elemento de **bloque**.
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/sections.html#the-address-element)
+
+### Elemento de texto preformateado `<pre>`
+
+El texto preformateado, insertado con el elemento `<pre>`, permite insertar texto que se formateará con las convenciones tipográficas usuales y no con elementos HTML.
+
+Por ejemplo, para representar código, el elemento `<pre>` puede ser utilizado junto al elemento `<code>`:
+
+```html
+<p>This is the <code>Panel</code> constructor:</p>
+<pre>
+  <code>
+    function Panel(element, canClose, closeHandler) {
+      this.element = element;
+      this.canClose = canClose;
+      this.closeHandler = function () { if (closeHandler) closeHandler() };
+    }
+  </code>
+</pre>
+```
+
+:bangbang: Este elemento es un elemento de **bloque**.
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/grouping-content.html#the-pre-element)
+
+### Elemento `<hr>`
+
+Este elemento `<hr>` no contiene texto y solo muestra una línea horizontal que permite separar diferentes partes de un contenido.
+
+:bangbang: Este elemento es un elemento de **bloque**.
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/grouping-content.html#the-hr-element)
 
 ## Validación de errores en HTML
 
