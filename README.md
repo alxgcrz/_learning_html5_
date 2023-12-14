@@ -2,17 +2,17 @@
 
 ## Introducción a HTML5
 
-<!-- markdownlint-disable MD033 -->
-<p align="center">
-  <a href="https://html.spec.whatwg.org/dev/">
-    <img src="https://www.w3.org/html/logo/img/html5-display.png" height="392" alt="HTML5 Powered" title="HTML5 Powered">
-  </a>
-</p>
-<!-- markdownlint-enable MD033 -->
+HTML son las siglas de **_HyperText Markup Language_** o Lenguaje de Marcado de Hipertexto. Es un lenguaje de basado en etiquetas.
 
-El documento que lee el navegador está escrito en un lenguaje de marcado llamado **HTML**, que son las siglas de **HyperText Markup Language** (Lenguaje de marcas de hipertexto), o lo que es lo mismo, un lenguaje de etiquetas que permite incluir o hacer referencia a todo tipo de información.
+El lenguaje HTML se introduce en un documento tipo texto con extensión **.html**. Este HTML es interpretado por un _"user agent"_, que en la mayoría de ocasiones se corresponde con un navegador web. Sin embargo existen otro tipo de _"user agent"_ como podría ser los robots de indexación de los motores de búsqueda, etcétera...
 
-Dicho documento esta formado por **etiquetas**, que son la base del lenguaje HTML. Existen muchas etiquetas y cada una se utiliza para contener información y darle un cierto significado a dicha información.
+El objetivo del HTML es describir la estructura del documento e indicar el **contenido semántico** de cada elemento que forma parte del documento.
+
+Para ello se emplea el uso de **etiquetas**, que son la base del lenguaje HTML. Existen muchas etiquetas y cada una se utiliza para contener información y darle un significado a dicha información.
+
+Esta es la razón por la que el lenguaje HTML se considera semántico. Describe el contenido de la información con el uso de las etiquetas. Para gestionar el aspecto visual de esa información se debe utilizar el lenguaje CSS.
+
+El estándar HTML contiene un número concreto de etiquetas, algunas plenamente utilizables y otras marcadas como obsoletas. Sin embargo, aunque no se genere ningún error, en **HTML** no se debe utilizar cualquier palabra como etiqueta:
 
 ```html
 <!-- INCORRECTO -->
@@ -21,16 +21,6 @@ Dicho documento esta formado por **etiquetas**, que son la base del lenguaje HTM
 <!-- Correcto -->
 <p>Párrafo</p> 
 ```
-
-En **HTML** no se puede utilizar cualquier palabra como etiqueta (en el ejemplo anterior, es incorrecto utilizar la etiqueta «etiqueta»). En su lugar, existen una serie de etiquetas concretas, cada una de ellas con su finalidad y características propias, que tendremos que utilizar según requiera la ocasión. Por norma general, las etiquetas deben cerrarse para indicar donde finaliza su contenido.
-
-En los navegadores, tienes varias formas de acceder al código HTML de la página:
-
-- Pulsando la combinación de teclas `Ctrl + U`. Te aparecerá el código fuente tal cuál lo recibe el navegador.
-
-- Pulsando `Ctrl + Shift + I` aparecerá la consola del navegador.
-
-Uno de los principales objetivos de HTML5 es introducir información en un documento HTML5 de forma que sea **semántico** y no visual. Con esto queremos decir que todos los aspectos visuales deben dejarse para el apartado de presentación, que se gestiona desde el lenguaje CSS.
 
 En el documento HTML debe aparecer información correctamente individualizada, de modo que al leer una página HTML comprendamos su significado, y si queremos cambiar la apariencia, lo hagamos en el documento CSS. Esto es lo que comunmente se conoce como **separación de la presentación del contenido**.
 
@@ -44,9 +34,13 @@ En este caso se está utilizando la etiqueta `<b>` de HTML4 y anteriores para po
 Hola, quiero resaltar esta <strong>palabra</strong>.
 ```
 
-El objetivo de crear documentos HTML semánticos es que, aunque estamos acostumbrados a crear páginas para usuarios (o más concretamente, para navegadores), cada vez tendemos más a una Internet capaz de procesar información de forma autónoma.
+En los navegadores, hay varias formas de acceder al código HTML de la página:
 
-### Estructura de etiqueta HTML
+- Pulsando la combinación de teclas `Ctrl + U`. Te aparecerá el código fuente tal cuál lo recibe el navegador.
+
+- Pulsando `Ctrl + Shift + I` aparecerá la consola del navegador.
+
+### Estructura de una etiqueta HTML
 
 La estructura de las etiquetas HTML tiene el siguiente formato:
 
@@ -54,17 +48,21 @@ La estructura de las etiquetas HTML tiene el siguiente formato:
 <etiqueta atributo="valor">contenido</etiqueta>
 ```
 
-#### Etiqueta HTML
+Por norma general, las etiquetas deben cerrarse para indicar donde finaliza su contenido. Sin embargo, aquellas etiquetas sin contenido textual como por ejemplo `<hr>` o `<img>` o sin elementos anidados no tienen etiqueta de cierre.
+
+#### Formato de una etiqueta
 
 La parte esencial de una etiqueta HTML es lo que se denomina la **etiqueta de apertura**. Se trata de escribir el nombre de la etiqueta en cuestión, colocándola entre los carácteres `<` y `>`. Aunque el navegador lo permita si no es así, las etiquetas HTML se deberían escribir siempre en minúsculas.
 
-En HTML5 no se puede colocar cualquier palabra como etiqueta.
+Para el código HTML sea válido no se debe utilizar cualquier palabra como etiqueta, pese a que el lenguaje HTML es permisivo en ese sentido.
 
 La mayoría de las etiquetas requieren que se especifique un **cierre de etiqueta** para saber donde termina de actuar. Se caracteriza en que se escribe igual que la etiqueta de apertura, pero con la barra `/` inmediatamente después del `<`.
 
-#### Atributos HTML
+#### Atributos
 
-En algunas etiquetas HTML, existen algunos atributos específicos (que pueden ser **opcionales u obligatorios**). Los atributos determinan cierta información sobre la etiqueta y generalmente van asociados a un valor determinado. Este par atributo-valor se escribe después del nombre de la etiqueta, separándola por espacio y antes del carácter `>` de la etiqueta de apertura:
+En algunas etiquetas HTML, existen algunos [atributos específicos](https://developer.mozilla.org/es/docs/Web/HTML/Attributes) (que pueden ser **opcionales u obligatorios**) y otros que son [atributos globales](https://developer.mozilla.org/es/docs/Web/HTML/Global_attributes).
+
+Los atributos determinan cierta información sobre la etiqueta y generalmente van asociados a un **valor determinado**. Este atributo se escribe después del nombre de la etiqueta, separándola por espacio y antes del carácter `>`:
 
 ```html
 <strong id="dato">Contenido</strong>
@@ -72,7 +70,7 @@ En algunas etiquetas HTML, existen algunos atributos específicos (que pueden se
 <strong id="dato" class="clase1" lang="es">Contenido de texto</strong>
 ```
 
-Una etiqueta puede tener varios pares _atributo-valor_, como se ve en el ejemplo anterior, pero nunca se debe repetir el mismo atributo en una misma etiqueta varias veces, ya que **sobreescribiría** al anterior. El orden de los atributos no importa.
+Una etiqueta puede tener uno o varios pares de _atributo-valor_, pero nunca se debe repetir el mismo atributo en una misma etiqueta varias veces, ya que **sobreescribiría** al anterior. El orden de los atributos no es importante.
 
 Aunque los valores pueden ir rodeados por comillas simples, se recomienda escribir el valor siempre entre **comillas dobles**.
 
@@ -84,9 +82,9 @@ Existen 3 tipos de atributos dependiendo de sus valores:
 
 3. **Valores booleanos**: Son los atributos que deben tener un valor verdadero (true) o un valor falso (false). En HTML5 un atributo sin valor (solo el atributo) significa verdadero y si se omite el atributo se considera falso.
 
-#### Contenido de la etiqueta HTML
+#### Contenido de la etiqueta
 
-En el interior de la etiqueta HTML (después de la etiqueta de apertura y antes de la etiqueta de cierre) se debe colocar la información que queremos que sea afectada por dicha etiqueta. Una etiqueta puede contener desde un fragmento de texto hasta un grupo de etiquetas.
+Una etiqueta puede contener desde un fragmento de texto hasta un grupo de etiquetas:
 
 ```html
 <div id="pagina">
@@ -95,15 +93,39 @@ En el interior de la etiqueta HTML (después de la etiqueta de apertura y antes 
 </div>
 ```
 
-#### Comentario HTML
+#### Comentarios en HTML
 
 Para introducir estos comentarios en el código HTML, basta con escribir los fragmentos de texto `<!-- y -->` entre el comentario en cuestión que queramos incluir.
 
 :warning: **NOTA**: Los comentarios HTML son **visibles** si se accede al código fuente del documento.
 
+#### Elementos en bloque vs elementos en línea
+
+La distinción entre **elementos en bloque** frente a **elementos en línea** se utiliza en las especificaciones de HTML hasta la 4.01. HTML5 hereda esta noción, en la que los elementos de estructura son elementos de bloque (como por ejemplo `<div>` o `<p>`) mientras que los elementos de formato de texto (como `<strong>` o `<span>`) son elementos en línea.
+
+Un **elemento de bloque** ocupa todo el espacio de su elemento padre (el contenedor), creando así un _"bloque"_. Los navegadores suelen mostrar el elemento a nivel de bloque con un salto de línea antes y después del elemento.
+
+:warning: **NOTA:** Los elementos de bloque sólo deben aparecer dentro del elemento `<body>`.
+
+En lo que respecta a anidación, los elementos de tipo bloque pueden contener otros elementos de tipo bloque, elementos de tipo en línea y de tipo texto.
+
+Un **elemento en línea** ocupa sólo el espacio delimitado por las etiquetas que definen el elemento en línea. De forma predeterminada, los elementos en línea no comienzan con la nueva línea.
+
+Los elementos de tipo en línea pueden contener otros elementos de tipo en línea y de tipo texto pero no elementos de tipo bloque.
+
+[Lista de elementos en bloque](https://developer.mozilla.org/es/docs/Glossary/Block-level_content) y [lista de elementos en línea](https://developer.mozilla.org/es/docs/orphaned/Web/HTML/Inline_elements).
+
+#### Etiquetas obsoletas
+
+Con el paso del tiempo y la transición desde versiones anteriores a HTML5 (por ejemplo, desde HTML4 o XHTML), hay muchas etiquetas HTML que han sido marcadas como [obsoletas](https://html.spec.whatwg.org/dev/obsolete.html#non-conforming-features).
+
+Además de las etiquetas, hay comportamientos que se van marcando como [obsoletos](https://html.spec.whatwg.org/dev/obsolete.html#obsolete-but-conforming-features) aunque no son incorrectos si se utilizan como por ejemplo indicar el atributo de tipo `type="text/css"` en un elemento `<style>`.
+
 ### Atributos comunes en HTML
 
 Los atributos son palabras clave de texto que modifican ligeramente el comportamiento de la etiqueta que lo contiene. Los atributos comunes son atributos que pueden estar prácticamente en **cualquier etiqueta HTML**.
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/dom.html#global-attributes)
 
 #### Atributos CSS
 
@@ -260,16 +282,17 @@ En HTML es posible añadir el atributo `accesskey` para indicar un atajo de tecl
 
 :warning: Debido a que no está estandarizado entre sistemas operativos y navegadores no se aconseja su uso.
 
-### Estructura del documento HTML
+## Estructura de un documento HTML
 
-Un **documento HTML** debe estar bien formado sintácticamente para que el navegador pueda leerlo correctamente. Para ello, debe tener una estructura inicial bien definida, con ciertas etiquetas HTML obligatorias y algunas características recomendables. En principio, necesitaremos diferenciar la estructura del documento en **tres partes**.
+Un **documento HTML** debe estar bien formado sintácticamente para que el navegador pueda leerlo correctamente:
 
 ```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Título del documento</title>
-  <meta charset="utf8">
 </head>
 <body>
   <!-- ... -->
@@ -277,9 +300,11 @@ Un **documento HTML** debe estar bien formado sintácticamente para que el naveg
 </html>
 ```
 
-#### El _DOCTYPE_ (tipo de documento)
+### El `<!DOCTYPE>` (tipo de documento)
 
-El `!DOCTYPE`` o **tipo de documento** es una etiqueta especial que se escribe en la primera línea del documento HTML. Debe ir especificado siempre para que el navegador sepa de que tipo de documento HTML se trata.
+HTML es una aplicación **SGML** o _Standard Generalized Markup Language_. Es por esto que es necesario que la primera línea de un documento contenga la indicación del lenguaje de etiquetas utilizado.
+
+El `!DOCTYPE` o **tipo de documento** es una etiqueta especial que se escribe en la primera línea del documento HTML y que realiza esa función de indicar el tipo de etiquetas utilizado. Esta etiqueta no se considera una etiqueta HTML.
 
 Es una etiqueta **obligatoria**, pero de no indicarla, la página web probablemente continuaría visualizándose de forma correcta. En el caso de no indicar el tipo de documento en una página HTML, el navegador entra en lo que se llama **'Quirk mode'** (modo peculiar o modo no estándar), donde se activa un modo de retrocompatibilidad con páginas antiguas, por lo que procesará de forma diferente muchas etiquetas HTML o propiedades CSS.
 
@@ -296,17 +321,240 @@ En versiones anteriores, como **HTML4 o XHTML**, el tipo de documento se especif
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 ```
 
-#### La etiqueta _head_ (metadatos)
+### La etiqueta `<html>`
+
+El elemento `<html>` es el elemento raíz de un documento HTML. Se coloca después de la declaración del tipo de documento y abarca todo el documento.
+
+Entre los atributos globales, el uso del atributo `lang` **no es obligatorio** pero sí recomendable para indicar al navegador el idioma empleado en el documento. Este atributo también es utilizado por los motores de búsqueda y por los navegadores con síntesis de voz para personas con discapacidad visual.
+
+### La etiqueta `<head>` (metadatos)
 
 Cuando hablamos de la etiqueta `<head>` de un documento HTML, muchas veces la denominamos [**cabecera HTML**](https://html.spec.whatwg.org/dev/semantics.html#the-head-element). Sin embargo, esta cabecera no es una parte visual de la página web, sino una parte de nuestro código HTML donde se incluyen ciertas etiquetas de metadatos, es decir, unas etiquetas que establecen ciertos datos que no tienen que verse necesariamente de forma visual.
 
 Algunos metadatos son el **título**, la **descripción** de la página, el **icono** o favicon, etcétera...
 
-#### La etiqueta _body_ (cuerpo)
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/semantics.html#the-head-element)
 
-La otra parte principal de un documento HTML es la etiqueta `<body>`. Todos los elementos visuales de una página se encuentran en el interior de la etiqueta `<body>`, por lo que es una de las partes más importantes de una página web. Esta sección va inmediatamente después del cierre de la etiqueta `</head>`.
+#### Etiqueta `<title>`
 
-### Validación de errores en HTML
+Esta etiqueta es **obligatoria** y sólo puede haber **una etiqueta** de este tipo en un mismo documento. Es el título del documento y aparece como título en la ventana o en las pestañas del navegador.
+
+Además, este título se utiliza como enlace y en los resultados de los motores de búsqueda.
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/semantics.html#the-title-element)
+
+#### Etiqueta `<meta>`
+
+El elemento `<meta>` permite guardar metadatos del documento. Puede haber varios elementos, uno o ningún elemento de este tipo.
+
+El más importante es el metadato que indica el tipo de codificación. Es importante indicar la codificación **justo después de la etiqueta de apertura** `<head>` porque esa codificación va a afectar a todos los elementos posteriores. Actualmente la codificación utilizada es **UTF-8**.
+
+```html
+<meta charset="UTF-8">
+<meta name="description" content="Descripción del document">
+<meta name="author" content="Autor del documento">
+```
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/semantics.html#the-meta-element)
+
+#### Etiqueta `<link>`
+
+El elemento `<link>` permite crear enlaces a lugares externos del documento. También permite mostrar un icono en la barra de direcciones del navegador.
+
+```html
+<link rel="stylesheet" href="/home.css">
+<link rel="icon" href="favicon.ico">
+```
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/semantics.html#the-link-element)
+
+#### Etiqueta `<style>`
+
+El elemento `<style>` permite declarar los estilos CSS que solo se aplicarán al documento actual. No es necesario indicar el atributo `type="text/css"` porque se considera que CSS es el tipo por defecto.
+
+```html
+<style>
+  .autor {
+    text-transform: uppercase;
+  }
+</style>
+```
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/semantics.html#the-style-element)
+
+#### Etiqueta `<script>`
+
+El elemento `<script>` permite declarar los script JavaScript que solo se aplicarán en el documento actual. No es necesario indicar el atributo `type="text/javascript"` porque se considera que JavaScript es el tipo por defecto.
+
+```html
+<script>
+  alert ("Hello World!");
+</script>
+```
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/scripting.html#scripting-3)
+
+### La etiqueta `<body>` (cuerpo)
+
+El elemento `<body>` incluye todos los elementos del contenido del documento. Su apertura se sitúa justo después del cierre del encabezado `</head>`.
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Título del documento</title>
+</head>
+<body>
+  <!-- ... -->
+</body>
+</html>
+```
+
+## Contenedores semánticos
+
+Un contenedor sirve para estructurar un documento HTML. Dentro de un contenedor se puede incluir contenido muy variado como texto, imágenes, formularios, etcétera...
+
+Por un lado hay contenedores más genéricos sin contenido semántico definido, como `<div>` o `<span>` y luego hay contenedores "semánticos" que están dedicados a un contenido específico como `<header>`, `<footer>` o `<article>`.
+
+### Elemento `<div>`
+
+El elemento `<div>` es uno de los contenedores más antiguos de HTML. Permite incluir en su interior todo tipo de contenido, incluido otros elementos `<div>`.
+
+Es un contenedor neutro, y aunque se puede utilizar para estructurar un documento, es preferible utilizar contenedores "semánticos" acordes a la información que contienen.
+
+```html
+<!-- Contenedores neutros  -->
+<div id="article">
+  <div id="header">
+    <!-- Título -->
+  </div>
+  <div id="main">
+    <!-- Cuerpo -->
+  </div>
+  <div id="footer">
+    <!-- Pie -->
+  </div>
+</div>
+
+<!-- Contenedores semánticos  -->
+<article>
+  <header>
+    <!-- Título -->
+  </header>
+  <p><!-- Cuerpo --></p>
+  <footer>
+    <!-- Pie -->
+  </footer>
+</article> 
+```
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/grouping-content.html#the-div-element)
+
+### Elemento `<span>`
+
+El elemento `<span>` normalmente se utiliza para formatear de manera particular un texto dentro de un párrafo de texto, como por ejemplo:
+
+```html
+<style>
+  .fondo-gris{
+    background-color: #eee;
+  }
+</style>  
+
+<p>Unde consequatur amet itaque. Velit <span class="fondo-gris">rerum sed iusto</span> quae 
+consectetur voluptas temporibus.</p>
+```
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/text-level-semantics.html#the-span-element)
+
+### Elemento `<header>`
+
+El elemento `<header>` permite insertar una zona de visualización para los encabezados:
+
+- A nivel de **página**: situado normalmente en la parte superior para contener un logo, una barra de navegación, etcétera...
+- A nivel de **contenido**: como podría ser el encabezado de un artículo.
+
+```html
+<article>
+  <header>
+    <h2>....</h2>
+  </header>
+  <p>....</p>
+  <footer>
+    <p>....</p>
+  </footer>
+</article>  
+```
+
+Desde HTML5.1, se pueden anidar elementos `<header>` y `<footer>` dentro de otro elemento `<header>` si los dos primeros elementos se incluyen en el mismo elemento padre:
+
+```html
+<article>
+  <header>
+    <h2>....</h2>
+    <aside>
+      <header>
+        <h3>....</h3>
+      </header>
+      <p>....</p>
+      <footer>
+        <p>....</p>
+      </footer>
+    </aside>  
+  </header>
+  <p>....</p>
+</article>  
+```
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/sections.html#the-header-element)
+
+### Elemento `<footer>`
+
+El elemento `<footer` permite insertar una zona de visualización para los pies de página. Se puede utilizar en los mismos niveles que un elemento `<header>`.
+
+Sin embargo, la utilización de `<footer>` no implica forzosamente el uso de `<header>`.
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/sections.html#the-footer-element)
+
+### Elemento `<aside>`
+
+El elemento `<aside>` permite mostrar un contenido relacionado con un contenido principal al que se le asocia, como podría ser una barra de desplazamiento, una zona para _advertising_, etcétera...
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/sections.html#the-aside-element)
+
+### Elemento `<nav>`
+
+El elemento `<nav>` se utiliza para visualizar una barra de navegación con enlaces a otras secciones del propio documento o enlaces a otros documentos.
+
+No es obligatorio incluir una barra de navegación ni tampoco está prohibido que haya varios elementos `<nav>` en un mismo documento HTML. Por ejemplo es posible tener un elemento `<nav>` dentro de un elemento `<header>` y otro elemento `<nav>` dentro de un elemento `<footer>`.
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/sections.html#the-nav-element)
+
+### Elemento `<main>`
+
+El elemento `<main>` permite indicar el contenido principal del documento. Este contenido debe ser único y no repetirse en el documento.
+
+Además, no debe utilizarse en el interior, como elemento incluido, de elementos como `<article>`, `<aside>`, `<footer>`, `<header>` o `<nav>`.
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/grouping-content.html#the-main-element)
+
+### Elemento `<section>`
+
+El elemento `<section` permite agrupar los elementos que comparten una misma temática.
+
+Esto permite agrupar en un mismo elemento un contenido estructurado, con su encabezado y su pie de página. La utilización de varios elementos `<section>` facilita estructurar un documento en secciones distintas.
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/sections.html#the-section-element)
+
+### Elemento `<article>`
+
+El elemento `<article` permite insertir un contenido autónomo, es decir, un contenido reutilizable en cualquier parte del documento. Como indica su nombre, su uso más habitual es la creación de artículos en un blog.
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/sections.html#the-article-element)
+
+## Validación de errores en HTML
 
 En los lenguajes de marcas como HTML, los navegadores son más permisivos, ya que en el caso de encontrar un error, intentan «deducir» lo que realmente se quería indicar y continuan con la carga del documento.
 
@@ -322,23 +570,15 @@ Para asegurarnos de que nuestro código está correctamente escrito, podemos uti
 
 Este proceso de validación se puede realizar mediante la herramienta oficial [HTML Validator de W3C](https://validator.w3.org/) u otras vías de validación mediante [plugins para el IDE o paquetes NPM](https://lenguajehtml.com/html/introduccion/validacion-html/).
 
-### Etiquetas obsoletas
-
-Con el paso del tiempo y la transición desde versiones anteriores a HTML5 (por ejemplo, desde HTML4 o XHTML), hay muchas etiquetas HTML que han sido marcadas como [obsoletas](https://html.spec.whatwg.org/dev/obsolete.html#obsolete) y se recomienda dejar de utilizarlas o utilizar otras [alternativas](https://lenguajehtml.com/html/introduccion/etiquetas-html-obsoletas/).
-
-## Etiquetas de cabecera
-
-(TODO)
-
 ---
 
 ## Enlaces de interés
 
-- <https://lenguajehtml.com/html/>
-- <https://html.spec.whatwg.org/dev/>
 - <https://html.spec.whatwg.org/>
+- <https://www.w3.org/TR/>
+- <https://lenguajehtml.com/html/>
 - <https://developer.mozilla.org/es/docs/Web/HTML>
-- <https://www.w3schools.com/html/>
+- <https://w3schools.com/html/>
 - <https://htmlreference.io/>
 - <https://html.com/>
 - <https://cheatsheets.shecodes.io/html>
@@ -346,8 +586,9 @@ Con el paso del tiempo y la transición desde versiones anteriores a HTML5 (por 
 - <https://htmlcheatsheet.com/>
 - <https://devhints.io/>
 - <https://internetingishard.netlify.app/html-and-css/>
-- <https://www.theodinproject.com/>
+- <https://theodinproject.com/>
 - <https://roadmap.sh/frontend>
+- <https://caniuse.com/>
 - <https://jsfiddle.net>
 
 ## Licencia
