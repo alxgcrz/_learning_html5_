@@ -410,13 +410,15 @@ En versiones anteriores, como **HTML4 o XHTML**, el tipo de documento se especif
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 ```
 
-### La etiqueta `<html>`
+### Etiqueta `<html>`
 
 El elemento `<html>` es el elemento raíz de un documento HTML. Se coloca después de la declaración del tipo de documento y abarca todo el documento.
 
 Entre los atributos globales, el uso del atributo `lang` **no es obligatorio** pero sí recomendable para indicar al navegador el idioma empleado en el documento. Este atributo también es utilizado por los motores de búsqueda y por los navegadores con síntesis de voz para personas con discapacidad visual.
 
-### La etiqueta `<head>` (metadatos)
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/semantics.html#the-html-element)
+
+### Etiqueta `<head>` (metadatos)
 
 Cuando hablamos de la etiqueta `<head>` de un documento HTML, muchas veces la denominamos [**cabecera HTML**](https://html.spec.whatwg.org/dev/semantics.html#the-head-element). Sin embargo, esta cabecera no es una parte visual de la página web, sino una parte de nuestro código HTML donde se incluyen ciertas etiquetas de metadatos, es decir, unas etiquetas que establecen ciertos datos que no tienen que verse necesariamente de forma visual.
 
@@ -436,7 +438,13 @@ Además, este título se utiliza como enlace y en los resultados de los motores 
 
 El elemento `<meta>` permite guardar metadatos del documento. Puede haber varios elementos, uno o ningún elemento de este tipo.
 
-El más importante es el metadato que indica el tipo de codificación. Es importante indicar la codificación **justo después de la etiqueta de apertura** `<head>` porque esa codificación va a afectar a todos los elementos posteriores. Actualmente la codificación utilizada es **UTF-8**.
+El más importante es el metadato que indica el tipo de codificación. Es importante indicar la codificación **justo después de la etiqueta de apertura** `<head>` porque esa codificación va a afectar a todos los elementos posteriores. Actualmente la codificación utilizada por defecto en HTML5 es **UTF-8**.
+
+**Unicode** es un conjunto de caracteres. Traslada cada caracter en un número. Por ejemplo la letra A se represeta con el número 65.
+
+Sin embargo **UTF-8** es un estándar de codificación, es decir, es como estos números se trasladan a binario para ser almacenado en la computadora.
+
+[Más información sobre UTF-8 en W3Schools](https://www.w3schools.com/charsets/ref_html_utf8.asp)
 
 ```html
 <meta charset="UTF-8">
@@ -448,7 +456,7 @@ El más importante es el metadato que indica el tipo de codificación. Es import
 
 #### Etiqueta `<link>`
 
-El elemento `<link>` permite crear enlaces a lugares externos del documento. También permite mostrar un icono en la barra de direcciones del navegador.
+El elemento `<link>` permite crear enlaces a lugares externos del documento que serán procesados por el navegador.
 
 ```html
 <link rel="stylesheet" href="/home.css">
@@ -456,6 +464,22 @@ El elemento `<link>` permite crear enlaces a lugares externos del documento. Tam
 ```
 
 [Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/semantics.html#the-link-element)
+
+El elemento `<link>` también permite mostrar un icono en la barra de direcciones del navegador.
+
+```html
+<head>
+  <title>Forums — Inbox</title>
+  <link rel=icon href=favicon.png sizes="16x16" type="image/png">
+  <link rel=icon href=windows.ico sizes="32x32 48x48" type="image/vnd.microsoft.icon">
+  <link rel=icon href=mac.icns sizes="128x128 512x512 8192x8192 32768x32768">
+  <link rel=icon href=iphone.png sizes="57x57" type="image/png">
+  <link rel=icon href=gnome.svg sizes="any" type="image/svg+xml">
+  ...
+ </head>
+```
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/links.html#rel-icon)
 
 #### Etiqueta `<style>`
 
@@ -661,6 +685,31 @@ El elemento `<article` permite insertir un contenido autónomo, es decir, un con
 
 [Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/sections.html#the-article-element)
 
+### Elemento `<details>`
+
+El elemento `<details>` es un contenedor que permite mostrar la información contenida en una etiqueta `<summary>` sólo cuando el usuario haga click en el mismo. En ese momento se deplegará la información. Hasta entonces permanece plegada y oculta a la vista.
+
+```html
+<section class="progress window">
+  <h1>Copying "Really Achieving Your Childhood Dreams"</h1>
+  <details>
+    <summary>Copying... <progress max="100" value="25"></progress> 25%</summary>
+    <dl>
+      <dt>Transfer rate:</dt> <dd>452KB/s</dd>
+      <dt>Local filename:</dt> <dd>/home/rpausch/raycd.m4v</dd>
+      <dt>Remote filename:</dt> <dd>/var/www/lectures/raycd.m4v</dd>
+      <dt>Duration:</dt> <dd>01:16:27</dd>
+      <dt>Color profile:</dt> <dd>SD (6-1-6)</dd>
+      <dt>Dimensions:</dt> <dd>320×240</dd>
+    </dl>
+  </details>
+</section>
+```
+
+:bangbang: Este elemento es un elemento de **bloque**.
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/interactive-elements.html#the-details-element)
+
 ## Contenedores de texto
 
 Los contenedores de texto son un tipo de contenedores semánticos que se utilizan para visualizar textos.
@@ -785,6 +834,278 @@ Este elemento `<hr>` no contiene texto y solo muestra una línea horizontal que 
 :bangbang: Este elemento es un elemento de **bloque**.
 
 [Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/grouping-content.html#the-hr-element)
+
+### Elemento de lista no ordenada `<ul>`
+
+Las listas no ordenadas o _"unordered list"_ permite listar los datos que se mostrarán con una **viñeta** delante de cada ítem. Para ello se utiliza el elemento `<ul>` para definir la lista.
+
+Cada ítem de la lista o _"list item"_ se ubica en un elemento `<li>`. Se suele emplear para barras de navegación ya que puede considerarse que son listas de enlaces.
+
+:warning: La etiqueta de cierre `</li>` puede omitirse si a continuación hay otro elemento `<li>` o no hay más contenido en el elemento padre.
+
+```html
+<p>I have lived in the following countries:</p>
+<ul>
+  <li>Norway
+  <li>Switzerland
+  <li>United Kingdom
+  <li>United States
+</ul>
+```
+
+:bangbang: Este elemento es un elemento de **bloque**.
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/grouping-content.html#the-ul-element)
+
+### Elemento de lista no ordenada `<menu>`
+
+Este elemento `<menu>` es una alternativa semántica al uso de elementos `<ul>` para representar un menú o barra de herramientas donde cada elemento representa un comando o acción que el usuario puede ejecutar o activar.
+
+```html
+<menu>
+  <li><button onclick="copy()"><img src="copy.svg" alt="Copy"></button></li>
+  <li><button onclick="cut()"><img src="cut.svg" alt="Cut"></button></li>
+  <li><button onclick="paste()"><img src="paste.svg" alt="Paste"></button></li>
+</menu>
+```
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/grouping-content.html#the-menu-element)
+
+### Elemento de lista ordenada `<ol>`
+
+Las listas ordenadas o _"ordered list"_ permiten listar datos que se mostrarán con una **cifra** delante de cada ítem. Para ello se utiliza el elemento `<ol>` para definir la lista.
+
+Cada ítem de la lista o _"list item"_ se ubica en un elemento `<li>`. Este elemento `<li>` puede utilizar el atributo _"value"_ para especificar el valor de visualización, es decir, el número o cifra que aparecerá delante del ítem en la lista.
+
+:warning: La etiqueta de cierre `</li>` puede omitirse si a continuación hay otro elemento `<li>` o no hay más contenido en el elemento padre.
+
+```html
+<p>I have lived in the following countries:</p>
+<ol>
+ <li>Switzerland
+ <li>United Kingdom
+ <li value="5">United States
+ <li value="8">Norway
+</ol>
+```
+
+El elemento `<ol>` tiene varios atributos:
+
+- _"start"_: permite indicar el valor inicial de la numeración
+- _"reversed"_: valor booleano que da la posibilidad de invertir el orden de la lista
+- _"type"_: permite cambiar el tipo de la enumeración:
+  - "1": para números decimales
+  - "a": para letras en minúsculas
+  - "A": para letras en mayúsculas
+  - "i": números romanos en minúsculas
+  - "I": números romanos en mayúsculas
+
+```html
+<p>I have lived in the following countries</p>
+<ol reversed start="5" type="a">
+ <li>Switzerland
+ <li>United Kingdom
+ <li>United States
+ <li>Norway
+</ol>
+```
+
+:bangbang: Este elemento es un elemento de **bloque**.
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/grouping-content.html#the-ol-element)
+
+### Elementos de lista de definiciones `<dl>`
+
+Las listas de definiciones permiten mostrar las definiciones de palabras o términos. Para crear una lista de definiciones hay tres elementos disponibles:
+
+- `<dl>` _"description list"_: permite definir la lista de definición
+- `<dt>` _"description term"_: indica el término que se va a definir
+- `<dd>` _"description definition"_: da la definición del término, identada respecto al término.
+
+```html
+<dl>
+  <dt lang="en-US"> <dfn>color</dfn> </dt>
+  <dt lang="en-GB"> <dfn>colour</dfn> </dt>
+  <dd> A sensation which (in humans) derives from the ability of
+  the fine structure of the eye to distinguish three differently
+  filtered analyses of a view. </dd>
+</dl>
+```
+
+:bangbang: Este elemento es un elemento de **bloque**.
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/grouping-content.html#the-dl-element)
+
+## Formateo del texto
+
+Para el formateo de texto con etiquetas HTML, existen una serie de etiquetas, algunas de las cuales son semánticas y proporcionan información del contenido y otras son etiquetas no semánticas que no proporcionan ninguna información y que provienen de versiones anteriores de HTML.
+
+### Formateo semántico del texto
+
+El formateo semántico permite resaltar palabras en un contenedor de tipo bloque con elementos de tipo en línea.
+
+- `<strong>`: marcado semántica de especial énfasis marcando en negrita (y no de resaltado en negrita como popularmente se cree)
+
+- `<em>`: marcado semántico de énfasis sencillo aplicando una cursiva.
+
+- `<ins>`: marcado semántico para subrayar un texto
+
+- `<del>`: marcado semántico para tachar un texto
+
+- `<sub>` y `<sup>`: permite poner caracteres como índice o exponente respectivamente
+
+- `<small>`: marcado semántico para mostrar un texto más pequeño
+
+- `<cite>` y `<q>`: marcado para indicar el título de una obra (en cursiva) y una cita al mismo (entre comillas dobles)
+
+- `<dfn>`: marcado semántico para una definición
+
+- `<abbr>`: marcado semántico para una abreviatura
+
+- `<code`>: marcado semántica para código informático
+
+- `<mark>`: marcado semántico que destaca un texto
+
+- `<br>`: permite cambiar de línea dentro de un párrafo permaneciendo estructuralmente en el mismo párrafo
+
+### Formateo no semántico
+
+Etiquetas que permiten un formateo del texto pero no proporcionan ninguna información semántica. Es conveniente siempre utilizar sus alternativas semánticas para proporcionar más información al navegador y al usuario.
+
+Por ejemplo, es recomendable utilizar la etiqueta `<strong>` antes que la etiqueta `<b>` para resaltar un texto.
+
+- `<b>`: resaltado en negrita sin información semántica
+
+- `<i>`: resaltado en cursiva sin información semántica
+
+- `<u>`: resaltado con subrayado sin información semántica
+
+- `<s>`: resaltado con tachado sin información semántica
+
+### Caracteres especiales
+
+Los caracteres especiales como flechas o símbolos tienen la forma `&{code};`.
+
+Por ejemplo, un caracter muy utilizado es el espacio de no separación o _Non-breaking space_ que se denota como `&nbsp;`. Este tipo de separación no incluye un salto de línea.
+
+[HTML Entities](https://www.w3schools.com/html/html_entities.asp), [HTML Symbols](https://www.w3schools.com/html/html_symbols.asp) o [Using Emojis in HTML](https://www.w3schools.com/html/html_emojis.asp)
+
+## Los enlaces
+
+La Web esta formada por enlaces de hipertexto, que representan una conexión entre dos recursos. En un documento HTML hay dos tipos de enlaces:
+
+- Enlaces a **recursos externos** como hojas de estilo CSS o ficheros JavaScript que serán procesados por el _"user agent"_ o navegador.
+
+- Enlaces de **hipertexto** que son enlaces a otros recursos y que son accesibles mediante la interacción del usuario (pulsando sobre ellos, por ejemplo)
+
+Los enlaces son un elemento de tipo **en línea**.
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/links.html#links)
+
+Los enlaces se crean con la etiquetas `<a>` aunque hay otras etiquetas como `<area>`, `<form>` y `<link>` que son enlaces especiales.
+
+Algunas atributos aplicables a los enlaces:
+
+- **href**: obligatorio para indicar la URL de destino
+- **hreflang**: especifica el idioma de destino
+- **rel**: permite indicar el tipo de relación del enlace que se establece
+- **target**: da el contexto de apertura del enlace
+  - _blank: el destino se abre en una nueva ventana o una nueva pestaña
+  - _parent: el destino se abre en el elemento padre.
+  - _self: el destino se abre en el mismo navegador por lo que no hay cambio de contexto
+  - _top: el destino se abre en el padre superior en la jerarquía de ventanas
+
+Los enlaces son **relativos** cuando apuntan a un documento del mismo sitio web mientras que un enlace es **absoluto** si apunta a otro sitio web.
+
+```html
+<nav>
+ <ul>
+  <li><a href="/">Home</a></li> <!--Enlace relativo -->
+  <li><a href="/news">News</a></li> <!--Enlace relativo -->
+  <li><a href="/legal">Legal</a></li> <!--Enlace relativo -->
+  <li><a href="#sectionA">Section A</a></li> <!--Enlace interno -->
+  <li><a href="#sectionB">Section B</a></li> <!--Enlace interno -->
+  <li><a href="http://google.es">Buscador</a></li> <!--Enlace absoluto -->
+ </ul>
+</nav>
+<section id="sectionA">
+  <h2>Section A</h2>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+</section>
+<section id="sectionB">
+  <h2>Section B</h2>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+</section>
+```
+
+Los enlaces **internos** al propio documento facilitan la navegación al usurario cuando el documento tiene una longitud elevada. Para implementar un enlace interno es necesario que el destino del enlace tenga el atributo `id`
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/text-level-semantics.html#the-a-element)
+
+## Tablas
+
+Las tablas se utilizan para mostrar datos tabulares. Cualquier otro uso, como por ejemplo estructurar un documento, no es correcto.
+
+El elemento padre para contener una tabla es `<table>`.
+
+Otros elementos son:
+
+- `<tr>` - _"table row"_: permite insertar filas en la tabla
+
+- `<td>` - _"table data"_: permite crear celdas en cada fila
+
+- `<th>` - _"table header"_: permite crear celdas con encabezado
+
+- `<caption>`: permite añadir un título a la tabla
+
+```html
+<table>
+  <caption>Resultados primer trimestre</caption>
+  <tr>
+    <th>&nbsp;</th>
+    <th>Enero</th>
+    <th>Febrero</th>
+    <th>Marzo</th>
+  </tr>
+  <tr>
+    <th>Nantes</th>
+    <td>1.84M</td>
+    <td>2.33M</td>
+    <td>1.39M</td>
+  </tr>
+  <tr>
+    <th>París</th>
+    <td>4.24M</td>
+    <td>2.29M</td>
+    <td>5.17M</td>
+  </tr>
+</table>
+```
+
+Las etiquetas de cierre `</tr>`, `</td>`, `</th>` y `</caption>` se pueden omitir en determinados supuestos. La tabla anterior quedaría:
+
+```html
+<table>
+  <caption>Resultados primer trimestre
+  <tr>
+    <th>&nbsp;
+    <th>Enero
+    <th>Febrero
+    <th>Marzo
+  <tr>
+    <th>Nantes
+    <td>1.84M
+    <td>2.33M
+    <td>1.39M
+  <tr>
+    <th>París
+    <td>4.24M
+    <td>2.29M
+    <td>5.17M
+</table>
+```
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/tables.html#the-table-element)
 
 ## Validación de errores en HTML
 
