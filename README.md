@@ -1002,6 +1002,8 @@ Los enlaces son un elemento de tipo **en línea**.
 
 [Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/links.html#links)
 
+### Elemento `<a>`
+
 Los enlaces se crean con la etiquetas `<a>` aunque hay otras etiquetas como `<area>`, `<form>` y `<link>` que son enlaces especiales.
 
 Algunas atributos aplicables a los enlaces:
@@ -1105,7 +1107,45 @@ Las etiquetas de cierre `</tr>`, `</td>`, `</th>` y `</caption>` se pueden omiti
 </table>
 ```
 
+Para fusionar celdas horizontalmente se utiliza el atributo `colspan` mientras que para fusionar celdas verticalmente se utiliza el atributo `rowspan`. En ambos casos se indica el número de celdas a fusionar.
+
+Para estructurar la tabla se pueden usar las etiquetas `<thead>`, `<tbody>` y `<tfoot>` de forma que se puedan agrupar las filas según su significado.
+
 [Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/tables.html#the-table-element)
+
+## Imágenes
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/images.html)
+
+### Elemento `<img>`
+
+Para insertar una imagen en un documento HTML se utiliza la etiqueta `<img>`.
+
+El atributo `src` es **obligatorio** para indicar la ruta de acceso a la imagen a mostrar. Esta ruta puede ser relativa al propio sitio web o absoluta.
+
+Con el atributo `alt` se puede mostrar un texto alternativo a la imagen si no se puede cargar.
+
+Los atributos `width` y `height` permiten indicar el espacio asignado a la visualización de la imagen. Si no se informan, el navegador debe esperar a la carga del archivo de imagen para determinar sus dimensiones y reservar el espacio. En caso de que el tamaño de alto o ancho de la imagen difieran de los indicados en los atributos, éstos tendrán preferencia.
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/embedded-content.html#the-img-element)
+
+### Elemento `<picture>`
+
+El elemento `<picture>` permite mostrar diferentes imágenes para diferentes dispositivos o tamaños de pantalla.
+
+Este elemento actua como contenedor. Dentro de este contenedor podemos utilizar etiquetas `<img>` o `<source>` para indicar diferentes imágenes a través del atributo `srcset`. El navegador utilizará el primer elemento que mejor se ajuste a la pantalla del dispositivo.
+
+Es recomendable especifiar una etiqueta `<img>` en último lugar dentro del contenedor `<picture>` que será utilizada por los navegadores que no soporten la etiqueta `<picture>`.
+
+```html
+ <picture>
+  <source media="(min-width: 650px)" srcset="img_food.jpg">
+  <source media="(min-width: 465px)" srcset="img_car.jpg">
+  <img src="img_girl.jpg">
+</picture> 
+```
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/embedded-content.html#the-picture-element)
 
 ## Validación de errores en HTML
 
