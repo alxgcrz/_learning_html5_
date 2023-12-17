@@ -1147,6 +1147,211 @@ Es recomendable especifiar una etiqueta `<img>` en último lugar dentro del cont
 
 [Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/embedded-content.html#the-picture-element)
 
+## Formularios
+
+Un formulario es un componente de una página web que tiene controles de formulario, tales como texto, botones, casillas de verificación, rango o controles de selector de color.
+
+Un usuario puede interactuar con un formulario de este tipo, proporcionando datos que luego se pueden enviar al servidor para su posterior procesamiento.
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/forms.html#forms)
+
+### Atributos comunes
+
+Los elementos HTML dedicados a los formularios comparten un gran número de atributos comunes:
+
+- `autocomplete`: permite el autocompletado de los campos.
+
+- `autofocus`: para activar inmediatamente el campo
+
+- `disabled`: es un atributo booleano. Desactiva el campo y por tanto el usuario no lo puede utilizar:
+  - elementos de tipo `button`, `input`, `select`, `textarea`
+  
+  - elementos contenidos en `fieldset`
+
+- `id`: permite identificar de forma única el campo
+
+- `name`:da nombre al campo
+
+- `placeholder`: muestra un texto como indicación del campo
+
+- `readonly`: indica que el campo es de solo lectura
+
+- `required`: indica que el campo es obligatorio
+
+- `name`: da nombre al campo. Este nombre se utilizará al recuperar los datos enviados por el formulario.
+
+### Elemento `<form>`
+
+El elemento `<form>` es el contenedor de un formulario.
+
+Este elemento tiene varios atributos:
+
+- `action`: la URL del script que va a hacerse cargo de los datos introducidos en el formulario
+
+- `method`: especifica si los datos se enviarán usando  HTTP con el método 'POST' o 'GET'.
+
+- `name`: asigna un nombre a un formulario
+
+- `enctype`: indica el tipo MIME de los datos enviados:
+  - _"application/x-www-form-urlencoded"_: formato por defecto. Los datos se codifican como pares clave-valor.
+  - _"multipart/form-data"_: para el envío de archivos
+
+```html
+<form action="backed.php" method="post" name="inscription" 
+  enctype="application/x-www-form-urlencoded">
+  ...
+</form>
+```
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/forms.html#the-form-element)
+
+### Elemento `<fieldset>`
+
+Para mejorar la visibilidad de los campos de un formulario se pueden agrupar mediante el elemento `<fieldset>`.
+
+Mediante el elemento `<legend>` se puede una leyenda o título.
+
+```html
+<form method="post" action="order.cgi">
+  <fieldset>
+    <legend>Personal data</legend>
+    <p><label>Full name: <input name="fn"> <small>Format: First Last</small></label></p>
+    <p><label for="age">Age: <input min="0" name="age" type="number"></label></p>
+    <p><label>Post code: <input name=pc> <small>Format: AB12 3CD</small></label></p>
+  </fieldset>
+</form>
+```
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/form-elements.html#the-fieldset-element)
+
+### Elemento `<label>`
+
+El elemento `<label>` permite asociar una etiqueta a un campo. Esta etiqueta se mostrará delante del campo y permite que se active el campo al pulsar sobre la etiqueta.
+
+Este elemento facilita su utilización y facilita la accesibilidad a las personas con discapacidad visual.
+
+La forma de asociar el elemento `<label>` con el campo es medidante el atributo `for` y el campo `id` del campo o simplemente poniendo el campo dentro de la etiqueta `<label>`. Ambas formas son aceptables:
+
+```html
+<form method="post" action="order.cgi">
+  <p><label for="fullName">Full name: <input id="fullName" name="fn"></label></p>
+  <p><label>Age: <input name="age" type="number" min="0"></label></p>
+  <p><label>Post code: <input name="pc"> <small>Format: AB12 3CD</small></label></p>
+</form>
+```
+  
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/forms.html#the-label-element)
+
+### Elemento `<input>`
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/input.html#the-input-element)
+
+### Elemento `<button>`
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/form-elements.html#the-button-element)
+
+### Elemento `<select>`
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/form-elements.html#the-select-element)
+
+### Elemento `<datalist>`
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/form-elements.html#the-datalist-element)
+
+### Elemento `<optgroup>`
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/form-elements.html#the-optgroup-element)
+
+### Elemento `<option>`
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/form-elements.html#the-option-element)
+
+### Elemento `<textarea>`
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/form-elements.html#the-textarea-element)
+
+### Elemento `<output>`
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/form-elements.html#the-output-element)
+
+### Elemento `<progress>`
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/form-elements.html#the-progress-element)
+
+### Elemento `<meter>`
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/form-elements.html#the-meter-element)
+
+## Recursos multimedia embebidos
+
+Los recursos multimedia embebidos pueden ser tanto audio como video.
+
+Para comprimir un fichero multimedia se necesita un **codec**, que es un acrónimo de COdificador-DEcodificador como por ejemplo VP9, MO3, AAC, H.265, etcétera...
+
+Para distribuir estos ficheros, es necesario "empaquetarlos" en un formato de transporte como por ejemplo .ogg, .mp4 o .webm.
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/media.html#media-elements)
+
+### Elemento `<source>`
+
+Este elemento `<source>` se puede utilizar con elementos `<img>`, `<video>` y `<audio>`.
+
+Este elemento permite definir diferentes fuentes de datos para un mismo elemento. Será el navegador el que elija el origen que mejor se ajuste.
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/embedded-content.html#the-source-element)
+
+### Elemento `<video>`
+
+El elemento `<video>` permite insertar archivos de vídeo en un documento web. El atributo `src` del elemento indica el archivo a utilizar.
+
+Sin embargo, es recomendable utilizar la etiqueta `<source>` para indicar distintas fuentes para un mismo clip, por ejemplo indicando diferentes formatos. Además, permite indicar un texto que será mostrado si el navegador no tiene soporte para esta etiqueta:
+
+```html
+<video controls poster="intro.jpg">
+  <source src="clipA.mp4">
+  <source src="clipA.webm">
+  <p>El navegador no tiene soporte para reproducir estos clips</p>
+</video>
+```
+
+El atributo booleano `autoplay` permite reproducir automáticamente el vídeo.
+
+Para controlar la reproducción está disponible el atributo booleano `controls` cuyo aspecto varía en función del navegador.
+
+Con el atributo `poster` se puede indicar una imagen de apertura.
+
+Se pueden especifiar las dimensiones del vídeo con los atributos `width` y/o `height`.
+
+Además, tenemos el atributo `loop` para reproducir el vídeo en bucle y el atributo `muted` para desactivar el sonido.
+
+Los archivos de vídeo son archivos pesados por lo que es recomendable precargarlos para que la reproducción sea más fluida:
+
+- `preload="auto"`: indica que es el navegador el encargado de descargar los datos necesarios
+
+- `preload="metadata"`: especifica al navegador que es necesario descargar los metadatos del vídeo para obtener la información sobre tamaño, duración, etcétera...
+
+- `preload="none"`: indica al navegador que no hay que precargar el vídeo
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/media.html#the-video-element)
+
+### Elemento `<audio>`
+
+El elemento `<audio>` permite insertar archivos de audio en un documento web. El atributo `src` del elemento indica el archivo a utilizar.
+
+Sin embargo, es recomendable utilizar la etiqueta `<source>` para indicar distintas fuentes para un mismo clip, por ejemplo indicando diferentes formatos. Además, permite indicar un texto que será mostrado si el navegador no tiene soporte para esta etiqueta:
+
+```html
+<audio controls>
+  <source src="audioA.mp3">
+  <source src="audioA.webm">
+  <p>El navegador no soporte esta etiqueta</p>
+</audio>
+```
+
+Para controlar la reproducción está disponible el atributo booleano `controls` cuyo aspecto varía en función del navegador.
+
+[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/media.html#the-audio-element)
+
 ## Validación de errores en HTML
 
 En los lenguajes de marcas como HTML, los navegadores son más permisivos, ya que en el caso de encontrar un error, intentan «deducir» lo que realmente se quería indicar y continuan con la carga del documento.
