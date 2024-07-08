@@ -1370,7 +1370,7 @@ Este proceso de validación se puede realizar mediante la herramienta oficial [H
 
 ---
 
-## Enlaces de interés
+## Referencias
 
 - <https://html.spec.whatwg.org/>
 - <https://www.w3.org/TR/>
