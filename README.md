@@ -97,7 +97,7 @@ Una etiqueta puede contener desde un fragmento de texto hasta un grupo de etique
 
 Para introducir estos comentarios en el código HTML, basta con escribir los fragmentos de texto `<!-- y -->` entre el comentario en cuestión que queramos incluir.
 
-:warning: **NOTA**: Los comentarios HTML son **visibles** si se accede al código fuente del documento.
+> :warning: Los comentarios HTML son **visibles** si se accede al código fuente del documento.
 
 #### Elementos en bloque vs elementos en línea
 
@@ -105,7 +105,7 @@ La distinción entre **elementos en bloque** frente a **elementos en línea** se
 
 Un **elemento de bloque** ocupa todo el espacio de su elemento padre (el contenedor), creando así un _"bloque"_. Los navegadores suelen mostrar el elemento a nivel de bloque con un salto de línea antes y después del elemento.
 
-:warning: **NOTA:** Los elementos de bloque sólo deben aparecer dentro del elemento `<body>`.
+> :warning: Los elementos de bloque sólo deben aparecer dentro del elemento `<body>`.
 
 En lo que respecta a anidación, los elementos de tipo bloque pueden contener otros elementos de tipo bloque, elementos de tipo en línea y de tipo texto.
 
@@ -369,7 +369,7 @@ En HTML es posible añadir el atributo `accesskey` para indicar un atajo de tecl
 </form>
 ```
 
-:warning: Debido a que no está estandarizado entre sistemas operativos y navegadores no se aconseja su uso.
+> :warning: Su **uso está desaconsejado** debido a que no está estandarizado entre sistemas operativos y navegadores.
 
 ## Estructura de un documento HTML
 
@@ -563,7 +563,7 @@ Es un contenedor neutro, y aunque se puede utilizar para estructurar un document
 </article> 
 ```
 
-:bangbang: Este elemento es un elemento de **bloque**.
+> :bangbang: Este elemento es un elemento de **bloque**.
 
 [Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/grouping-content.html#the-div-element)
 
@@ -582,7 +582,7 @@ El elemento `<span>` normalmente se utiliza para formatear de manera particular 
 consectetur voluptas temporibus.</p>
 ```
 
-:bangbang: Este elemento es un elemento **en línea**.
+> :bangbang: Este elemento es un elemento **en línea**.
 
 [Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/text-level-semantics.html#the-span-element)
 
@@ -625,7 +625,7 @@ Desde HTML5.1, se pueden anidar elementos `<header>` y `<footer>` dentro de otro
 </article>  
 ```
 
-:bangbang: Este elemento es un elemento de **bloque**.
+> :bangbang: Este elemento es un elemento de **bloque**.
 
 [Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/sections.html#the-header-element)
 
@@ -635,7 +635,7 @@ El elemento `<footer` permite insertar una zona de visualización para los pies 
 
 Sin embargo, la utilización de `<footer>` no implica forzosamente el uso de `<header>`.
 
-:bangbang: Este elemento es un elemento de **bloque**.
+> :bangbang: Este elemento es un elemento de **bloque**.
 
 [Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/sections.html#the-footer-element)
 
@@ -643,7 +643,7 @@ Sin embargo, la utilización de `<footer>` no implica forzosamente el uso de `<h
 
 El elemento `<aside>` permite mostrar un contenido relacionado con un contenido principal al que se le asocia, como podría ser una barra de desplazamiento, una zona para _advertising_, etcétera...
 
-:bangbang: Este elemento es un elemento de **bloque**.
+> :bangbang: Este elemento es un elemento de **bloque**.
 
 [Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/sections.html#the-aside-element)
 
@@ -653,7 +653,7 @@ El elemento `<nav>` se utiliza para visualizar una barra de navegación con enla
 
 No es obligatorio incluir una barra de navegación ni tampoco está prohibido que haya varios elementos `<nav>` en un mismo documento HTML. Por ejemplo es posible tener un elemento `<nav>` dentro de un elemento `<header>` y otro elemento `<nav>` dentro de un elemento `<footer>`.
 
-:bangbang: Este elemento es un elemento de **bloque**.
+> :bangbang: Este elemento es un elemento de **bloque**.
 
 [Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/sections.html#the-nav-element)
 
@@ -663,7 +663,7 @@ El elemento `<main>` permite indicar el contenido principal del documento. Este 
 
 Además, no debe utilizarse en el interior, como elemento incluido, de elementos como `<article>`, `<aside>`, `<footer>`, `<header>` o `<nav>`.
 
-:bangbang: Este elemento es un elemento de **bloque**.
+> :bangbang: Este elemento es un elemento de **bloque**.
 
 [Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/grouping-content.html#the-main-element)
 
@@ -673,7 +673,7 @@ El elemento `<section` permite agrupar los elementos que comparten una misma tem
 
 Esto permite agrupar en un mismo elemento un contenido estructurado, con su encabezado y su pie de página. La utilización de varios elementos `<section>` facilita estructurar un documento en secciones distintas.
 
-:bangbang: Este elemento es un elemento de **bloque**.
+> :bangbang: Este elemento es un elemento de **bloque**.
 
 [Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/sections.html#the-section-element)
 
@@ -681,7 +681,7 @@ Esto permite agrupar en un mismo elemento un contenido estructurado, con su enca
 
 El elemento `<article` permite insertir un contenido autónomo, es decir, un contenido reutilizable en cualquier parte del documento. Como indica su nombre, su uso más habitual es la creación de artículos en un blog.
 
-:bangbang: Este elemento es un elemento de **bloque**.
+> :bangbang: Este elemento es un elemento de **bloque**.
 
 [Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/sections.html#the-article-element)
 
@@ -706,7 +706,7 @@ El elemento `<details>` es un contenedor que permite mostrar la información con
 </section>
 ```
 
-:bangbang: Este elemento es un elemento de **bloque**.
+> :bangbang: Este elemento es un elemento de **bloque**.
 
 [Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/interactive-elements.html#the-details-element)
 
@@ -747,7 +747,7 @@ Además, es perfectamente válido repetir niveles de jerarquía en contenedores 
 </body>
 ```
 
-:bangbang: Este elemento es un elemento de **bloque**.
+> :bangbang: Este elemento es un elemento de **bloque**.
 
 [Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements)
 
@@ -768,7 +768,7 @@ El elemento `<p>` permite insertar el texto actual en un párrafo.
 </fieldset>
 ```
 
-:bangbang: Este elemento es un elemento de **bloque**.
+> :bangbang: Este elemento es un elemento de **bloque**.
 
 [Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/grouping-content.html#the-p-element)
 
@@ -782,7 +782,7 @@ El elemento `<blockquote>` permite mostrar un texto extraído de un origen exter
 </blockquote>
 ```
 
-:bangbang: Este elemento es un elemento de **bloque**.
+> :bangbang: Este elemento es un elemento de **bloque**.
 
 [Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/grouping-content.html#the-blockquote-element)
 
@@ -800,7 +800,7 @@ El elemento `<address>` se utiliza para mostrar direcciones de todo tipo dentro 
 </footer>
 ```
 
-:bangbang: Este elemento es un elemento de **bloque**.
+> :bangbang: Este elemento es un elemento de **bloque**.
 
 [Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/sections.html#the-address-element)
 
@@ -823,7 +823,7 @@ Por ejemplo, para representar código, el elemento `<pre>` puede ser utilizado j
 </pre>
 ```
 
-:bangbang: Este elemento es un elemento de **bloque**.
+> :bangbang: Este elemento es un elemento de **bloque**.
 
 [Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/grouping-content.html#the-pre-element)
 
@@ -831,7 +831,7 @@ Por ejemplo, para representar código, el elemento `<pre>` puede ser utilizado j
 
 Este elemento `<hr>` no contiene texto y solo muestra una línea horizontal que permite separar diferentes partes de un contenido.
 
-:bangbang: Este elemento es un elemento de **bloque**.
+> :bangbang: Este elemento es un elemento de **bloque**.
 
 [Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/grouping-content.html#the-hr-element)
 
@@ -841,7 +841,7 @@ Las listas no ordenadas o _"unordered list"_ permite listar los datos que se mos
 
 Cada ítem de la lista o _"list item"_ se ubica en un elemento `<li>`. Se suele emplear para barras de navegación ya que puede considerarse que son listas de enlaces.
 
-:warning: La etiqueta de cierre `</li>` puede omitirse si a continuación hay otro elemento `<li>` o no hay más contenido en el elemento padre.
+> :warning: La etiqueta de cierre `</li>` puede omitirse si a continuación hay otro elemento `<li>` o no hay más contenido en el elemento padre.
 
 ```html
 <p>I have lived in the following countries:</p>
@@ -853,7 +853,7 @@ Cada ítem de la lista o _"list item"_ se ubica en un elemento `<li>`. Se suele 
 </ul>
 ```
 
-:bangbang: Este elemento es un elemento de **bloque**.
+> :bangbang: Este elemento es un elemento de **bloque**.
 
 [Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/grouping-content.html#the-ul-element)
 
@@ -877,7 +877,7 @@ Las listas ordenadas o _"ordered list"_ permiten listar datos que se mostrarán 
 
 Cada ítem de la lista o _"list item"_ se ubica en un elemento `<li>`. Este elemento `<li>` puede utilizar el atributo _"value"_ para especificar el valor de visualización, es decir, el número o cifra que aparecerá delante del ítem en la lista.
 
-:warning: La etiqueta de cierre `</li>` puede omitirse si a continuación hay otro elemento `<li>` o no hay más contenido en el elemento padre.
+> :warning: La etiqueta de cierre `</li>` puede omitirse si a continuación hay otro elemento `<li>` o no hay más contenido en el elemento padre.
 
 ```html
 <p>I have lived in the following countries:</p>
@@ -910,7 +910,7 @@ El elemento `<ol>` tiene varios atributos:
 </ol>
 ```
 
-:bangbang: Este elemento es un elemento de **bloque**.
+> :bangbang: Este elemento es un elemento de **bloque**.
 
 [Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/grouping-content.html#the-ol-element)
 
@@ -932,7 +932,7 @@ Las listas de definiciones permiten mostrar las definiciones de palabras o térm
 </dl>
 ```
 
-:bangbang: Este elemento es un elemento de **bloque**.
+> :bangbang: Este elemento es un elemento de **bloque**.
 
 [Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/grouping-content.html#the-dl-element)
 
@@ -1388,6 +1388,7 @@ Este proceso de validación se puede realizar mediante la herramienta oficial [H
 - <https://roadmap.sh/frontend>
 - <https://caniuse.com/>
 - <https://jsfiddle.net>
+- <https://cheatsheets.zip/>
 
 ## Licencia
 
