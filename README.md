@@ -137,7 +137,7 @@ Para introducir comentarios en el código HTML, se utilizan los delimitadores `<
 
 La distinción entre **elementos en bloque** y **elementos en línea** se utiliza en las especificaciones de HTML hasta la 4.01. HTML5 hereda esta noción, donde los elementos de estructura, como `<div>` o `<p>`, son elementos de bloque mientras que los elementos de formato de texto, como `<strong>` o `<span>`, son elementos en línea.
 
-Un [**elemento de bloque**]((https://developer.mozilla.org/es/docs/Glossary/Block-level_content)) ocupa todo el ancho de su elemento padre (el contenedor), creando un _"bloque"_. Los navegadores suelen mostrar los elementos de bloque con un salto de línea antes y después de ellos.
+Un [**elemento de bloque**](https://developer.mozilla.org/es/docs/Glossary/Block-level_content) ocupa todo el ancho de su elemento padre (el contenedor), creando un _"bloque"_. Los navegadores suelen mostrar los elementos de bloque con un salto de línea antes y después de ellos.
 
 En términos de anidación, los elementos de tipo bloque pueden contener otros elementos de tipo bloque, elementos en línea y texto.
 
@@ -181,37 +181,37 @@ Los elementos en línea pueden contener otros elementos de tipo en línea y text
 
 ##### Elementos en línea
 
-- `<b>`
-- `<big>`
-- `<i>`
-- `<small>`
-- `<tt>`
+- `<a>`
 - `<abbr>`
 - `<acronym>`
+- `<b>`
+- `<bdo>`
+- `<big>`
+- `<button>`
 - `<cite>`
 - `<code>`
 - `<dfn>`
 - `<em>`
-- `<kbd>`
-- `<strong>`
-- `<samp>`
-- `<time>`
-- `<var>`
-- `<a>`
-- `<bdo>`
+- `<g>`
+- `<i>`
 - `<img>`
+- `<input>`
+- `<kbd>`
+- `<label>`
 - `<map>`
 - `<object>`
-- `<g>`
+- `<samp>`
 - `<script>`
+- `<select>`
+- `<small>`
 - `<span>`
+- `<strong>`
 - `<sub>`
 - `<sup>`
-- `<button>`
-- `<input>`
-- `<label>`
-- `<select>`
 - `<textarea>`
+- `<time>`
+- `<tt>`
+- `<var>`
 
 #### Etiquetas obsoletas
 
@@ -558,7 +558,7 @@ Para utilizar un script desde un archivo externo, puede usarse el atributo `src`
 <script src="script.js"></script>
 ```
 
-### La etiqueta `<body>`
+### Etiqueta `<body>`
 
 La [etiqueta `<body>`](https://html.spec.whatwg.org/dev/sections.html#the-body-element) es esencial en un documento HTML, ya que incluye todos los elementos que constituyen el contenido visible de la página.
 
@@ -583,15 +583,33 @@ La apertura de la etiqueta `<body>` se sitúa justo después del cierre de la et
 
 ## Contenedores semánticos
 
-Un contenedor sirve para estructurar un documento HTML. Dentro de un contenedor se puede incluir contenido muy variado como texto, imágenes, formularios, etcétera...
+Los contenedores en HTML permiten **organizar y estructurar el contenido de una página** de forma lógica. Estos contenedores pueden incluir una amplia gama de elementos como texto, imágenes, formularios, etcétera...
 
-Por un lado hay contenedores más genéricos sin contenido semántico definido, como `<div>` o `<span>` y luego hay contenedores "semánticos" que están dedicados a un contenido específico como `<header>`, `<footer>` o `<article>`.
+- **Contenedores genéricos**: no tienen un significado específico en cuanto al contenido que agrupan.
+
+  - `<div>`: se utiliza para agrupar bloques de contenido. No tiene significado semántico y se usa principalmente para aplicar estilos o scripts.
+
+  - `<span>`: similar a `<div>`, pero se utiliza para agrupar contenido en línea, como partes de texto, dentro de un párrafo.
+
+- **Contenedores semánticos**: proporcionan información adicional sobre el tipo de contenido que contienen, lo que mejora la accesibilidad y la comprensión tanto para los navegadores como para los motores de búsqueda.
+
+  - `<header>`: representa un encabezado de una página o sección.
+
+  - `<footer>`: representa el pie de una página o sección.
+  
+  - `<article>`: define un contenido independiente y autónomo, como un artículo de una revista o una entrada de blog.
+  
+  - `<section>`: agrupa contenido temáticamente relacionado.
+  
+  - `<nav>`: define un conjunto de enlaces de navegación.
+  
+  - `<aside>`: contiene información relacionada pero tangencial al contenido principal, como una barra lateral.
 
 ### Elemento `<div>`
 
-El elemento `<div>` es uno de los contenedores más antiguos de HTML. Permite incluir en su interior todo tipo de contenido, incluido otros elementos `<div>`.
+El [elemento `<div>`](https://html.spec.whatwg.org/dev/grouping-content.html#the-div-element) es un contenedor genérico y uno de los elementos más antiguos en HTML. Se utiliza para agrupar otros elementos y contenido, permitiendo incluir cualquier tipo de elementos, incluidos otros `<div>`. Sin embargo, su uso no proporciona información semántica sobre el contenido.
 
-Es un contenedor neutro, y aunque se puede utilizar para estructurar un documento, es preferible utilizar contenedores "semánticos" acordes a la información que contienen.
+Aunque `<div>` es útil para estructurar un documento, es preferible utilizar contenedores semánticos como `<header>`, `<footer>`, o `<section>`, que describen mejor la naturaleza del contenido.
 
 ```html
 <!-- Contenedores neutros  -->
@@ -619,13 +637,11 @@ Es un contenedor neutro, y aunque se puede utilizar para estructurar un document
 </article> 
 ```
 
-> :bangbang: Este elemento es un elemento de **bloque**.
-
-[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/grouping-content.html#the-div-element)
+> :bangbang: El elemento `<div>` es un elemento de **bloque**.
 
 ### Elemento `<span>`
 
-El elemento `<span>` normalmente se utiliza para formatear de manera particular un texto dentro de un párrafo de texto, como por ejemplo:
+El [elemento `<span>`](https://html.spec.whatwg.org/dev/text-level-semantics.html#the-span-element) es un contenedor genérico que se utiliza normalmente para formatear de manera particular un texto dentro de un párrafo de texto, como por ejemplo:
 
 ```html
 <style>
@@ -638,112 +654,172 @@ El elemento `<span>` normalmente se utiliza para formatear de manera particular 
 consectetur voluptas temporibus.</p>
 ```
 
-> :bangbang: Este elemento es un elemento **en línea**.
-
-[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/text-level-semantics.html#the-span-element)
+> :bangbang: El elemento `<span>` es un elemento **en línea**.
 
 ### Elemento `<header>`
 
-El elemento `<header>` permite insertar una zona de visualización para los encabezados:
+El [elemento `<header>`](https://html.spec.whatwg.org/dev/sections.html#the-header-element) es un contenedor semántico que se se utiliza para definir una sección introductoria o de encabezado, y suele contener elementos como títulos, logotipos o enlaces de navegación. Se puede usar en diferentes niveles:
 
-- A nivel de **página**: situado normalmente en la parte superior para contener un logo, una barra de navegación, etcétera...
-- A nivel de **contenido**: como podría ser el encabezado de un artículo.
+- A nivel de **página**: para mostrar encabezados generales como un logotipo o una barra de navegación.
+
+- A nivel de **contenido**: dentro de un artículo u otra sección para definir un encabezado específico.
 
 ```html
 <article>
   <header>
-    <h2>....</h2>
+    <h2>Encabezado del artículo</h2>
   </header>
-  <p>....</p>
+  <p>Cuerpo del artículo.</p>
   <footer>
-    <p>....</p>
+    <p>Pie del artículo.</p>
   </footer>
-</article>  
+</article>
 ```
 
-Desde HTML5.1, se pueden anidar elementos `<header>` y `<footer>` dentro de otro elemento `<header>` si los dos primeros elementos se incluyen en el mismo elemento padre:
+Desde HTML5.1, es posible anidar elementos `<header>` y `<footer>` dentro de otro elemento `<header>` si los dos primeros elementos se incluyen en el mismo elemento padre:
 
 ```html
 <article>
   <header>
-    <h2>....</h2>
+    <h2>Título del artículo</h2>
     <aside>
       <header>
-        <h3>....</h3>
+        <h3>Título del contenido secundario</h3>
       </header>
-      <p>....</p>
+      <p>Texto adicional dentro del artículo.</p>
       <footer>
-        <p>....</p>
+        <p>Pie del contenido secundario.</p>
       </footer>
     </aside>  
   </header>
-  <p>....</p>
-</article>  
+  <p>Texto principal del artículo.</p>
+</article>    
 ```
 
-> :bangbang: Este elemento es un elemento de **bloque**.
-
-[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/sections.html#the-header-element)
+> :bangbang: El elemento `<header>` es un elemento de **bloque**.
 
 ### Elemento `<footer>`
 
-El elemento `<footer` permite insertar una zona de visualización para los pies de página. Se puede utilizar en los mismos niveles que un elemento `<header>`.
+El [elemento `<footer`](https://html.spec.whatwg.org/dev/sections.html#the-footer-element) es un contenedor genérico que se utiliza para definir una sección de pie de página en un documento o en una parte específica del contenido, como un artículo o una sección. Al igual que el `<header>`, puede emplearse a diferentes niveles:
 
-Sin embargo, la utilización de `<footer>` no implica forzosamente el uso de `<header>`.
+- A nivel de **página**: contiene información como derechos de autor, enlaces de contacto o políticas de privacidad.
 
-> :bangbang: Este elemento es un elemento de **bloque**.
+- A nivel de **contenido**: por ejemplo, al final de un artículo, se puede utilizar para mostrar información adicional relacionada con ese contenido.
 
-[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/sections.html#the-footer-element)
+```html
+<article>
+  <header>
+    <h2>Título del artículo</h2>
+  </header>
+  <p>Contenido del artículo.</p>
+  <footer>
+    <p>© 2024 Autor del artículo</p>
+  </footer>
+</article>
+```
+
+El elemento `<footer>` se puede utilizar independientemente del uso de un `<header>`, y es común verlo al final de la página o en la conclusión de una sección de contenido.
+
+> :bangbang: El elemento `<footer>` es un elemento de **bloque**.
 
 ### Elemento `<aside>`
 
-El elemento `<aside>` permite mostrar un contenido relacionado con un contenido principal al que se le asocia, como podría ser una barra de desplazamiento, una zona para _advertising_, etcétera...
+El [elemento `<aside>`](https://html.spec.whatwg.org/dev/sections.html#the-aside-element) es un contenedor semántico que se utiliza para definir contenido relacionado o complementario al contenido principal. Es común emplearlo en barras laterales, anuncios, citas destacadas o cualquier información que apoye el contenido principal sin ser parte directa de él.
 
-> :bangbang: Este elemento es un elemento de **bloque**.
+```html
+<article>
+  <h2>Artículo principal</h2>
+  <p>Este es el contenido principal del artículo.</p>
+  <aside>
+    <h3>Nota relacionada</h3>
+    <p>Esta es una información adicional o relacionada con el artículo principal.</p>
+  </aside>
+</article>
+```
 
-[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/sections.html#the-aside-element)
+> :bangbang: El elemento `<aside>` es un elemento de **bloque**.
 
 ### Elemento `<nav>`
 
-El elemento `<nav>` se utiliza para visualizar una barra de navegación con enlaces a otras secciones del propio documento o enlaces a otros documentos.
+El [elemento `<nav>`](https://html.spec.whatwg.org/dev/sections.html#the-nav-element) es un contenedor semántico que define una sección del documento destinada a la navegación. Suele contener enlaces a diferentes secciones del mismo documento o a otros sitios web.
 
-No es obligatorio incluir una barra de navegación ni tampoco está prohibido que haya varios elementos `<nav>` en un mismo documento HTML. Por ejemplo es posible tener un elemento `<nav>` dentro de un elemento `<header>` y otro elemento `<nav>` dentro de un elemento `<footer>`.
+```html
+<nav>
+  <ul>
+    <li><a href="#inicio">Inicio</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+</nav>
+```
 
-> :bangbang: Este elemento es un elemento de **bloque**.
+Es importante destacar que no todo conjunto de enlaces tiene que estar dentro de un elemento `<nav>`. Sólo aquellos que son parte de la navegación principal o estructural del sitio deberían usarlo.
 
-[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/sections.html#the-nav-element)
+> :bangbang: El elemento `<nav>` es un elemento de **bloque**.
 
 ### Elemento `<main>`
 
-El elemento `<main>` permite indicar el contenido principal del documento. Este contenido debe ser único y no repetirse en el documento.
+El [elemento `<main>`](https://html.spec.whatwg.org/dev/grouping-content.html#the-main-element) es un contenedor semántico que se utiliza para contener el **contenido principal** de un documento HTML, es decir, el contenido que es único y específico de la página. Este contenido debe ser el más relevante y significativo para la estructura del sitio.
 
-Además, no debe utilizarse en el interior, como elemento incluido, de elementos como `<article>`, `<aside>`, `<footer>`, `<header>` o `<nav>`.
+```html
+<main>
+  <h1>Título Principal</h1>
+  <p>Este es el contenido más importante de la página.</p>
+</main>
+```
 
-> :bangbang: Este elemento es un elemento de **bloque**.
+Este elemento debe ser único en el documento. Sólo puede haber un elemento `<main>` en el documento.
 
-[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/grouping-content.html#the-main-element)
+Además, no debe estar dentro de otros elementos de estructura como `<header>`, `<footer>`, `<nav>`, `<aside>` o `<article>`.
+
+> :bangbang: El elemento `<main>` es un elemento de **bloque**.
 
 ### Elemento `<section>`
 
-El elemento `<section` permite agrupar los elementos que comparten una misma temática.
+El [elemento `<section`](https://html.spec.whatwg.org/dev/sections.html#the-section-element) es un contenedor semántico que se utiliza para **agrupar contenido relacionado** que comparte un tema o propósito común. Cada `<section>` debe contener un encabezado (generalmente un `<h1>`, `<h2>`, etc.) que identifique el tema de esa sección, así como la posibilidad de incluir un pie de página.
 
-Esto permite agrupar en un mismo elemento un contenido estructurado, con su encabezado y su pie de página. La utilización de varios elementos `<section>` facilita estructurar un documento en secciones distintas.
+```html
+<section>
+  <h2>Título de la Sección</h2>
+  <p>Este es el contenido de la sección que trata sobre un tema específico.</p>
+  <footer>
+    <p>Información adicional o referencias.</p>
+  </footer>
+</section>
+```
 
-> :bangbang: Este elemento es un elemento de **bloque**.
+Este elemento facilita la organización del documento en partes claramente definidas y ayuda a los lectores de pantalla a entender mejor la estructura del contenido.
 
-[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/sections.html#the-section-element)
+Es recomendable que cada `<section>` contenga su propio encabezado, para que quede claro cuál es el tema que abarca.
+
+La utilización de varios elementos `<section>` facilita estructurar un documento en secciones distintas.
+
+> :bangbang: El elemento `<section>` es un elemento de **bloque**.
 
 ### Elemento `<article>`
 
-El elemento `<article` permite insertir un contenido autónomo, es decir, un contenido reutilizable en cualquier parte del documento. Como indica su nombre, su uso más habitual es la creación de artículos en un blog.
+El [elemento `<article`](https://html.spec.whatwg.org/dev/sections.html#the-article-element) es un contenedor semántico diseñado para representar un **contenido autónomo y reutilizable**. Como indica su nombre, su uso más habitual es la creación de artículos en un blog.
 
-> :bangbang: Este elemento es un elemento de **bloque**.
+```html
+<article>
+  <header>
+    <h2>Título del Artículo</h2>
+    <p>Fecha de publicación: <time datetime="2024-09-24">24 de septiembre de 2024</time></p>
+  </header>
+  <p>Este es el contenido, que es completamente autónomo y tiene su propio sentido.</p>
+  <footer>
+    <p>Escrito por: Autor del artículo</p>
+  </footer>
+</article>
+```
 
-[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/sections.html#the-article-element)
+> :bangbang: El elemento `<article>` es un elemento de **bloque**.
 
 ### Elemento `<details>`
 
-El elemento `<details>` es un contenedor que permite mostrar la información contenida en una etiqueta `<summary>` sólo cuando el usuario haga click en el mismo. En ese momento se deplegará la información. Hasta entonces permanece plegada y oculta a la vista.
+El [elemento `<details>`](https://html.spec.whatwg.org/dev/interactive-elements.html#the-details-element) es un contenedor semántico que muestra **información adicional** de forma interactiva. Este elemento es útil para revelar o esconder contenido cuando el usuario lo solicita, mejorando así la experiencia del usuario al interactuar con la página.
+
+El elemento `<details>` contiene un elemento `<summary>`, que actúa como el título o encabezado del contenido que puede expandirse. Al hacer clic en el `<summary>`, se despliega el contenido adicional, que permanece oculto hasta que el usuario decide visualizarlo.
 
 ```html
 <section class="progress window">
@@ -762,9 +838,7 @@ El elemento `<details>` es un contenedor que permite mostrar la información con
 </section>
 ```
 
-> :bangbang: Este elemento es un elemento de **bloque**.
-
-[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/interactive-elements.html#the-details-element)
+> :bangbang: El elemento `<details>` es un elemento de **bloque**.
 
 ## Contenedores de texto
 
