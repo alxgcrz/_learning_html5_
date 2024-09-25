@@ -637,7 +637,7 @@ Aunque `<div>` es útil para estructurar un documento, es preferible utilizar co
 </article> 
 ```
 
-> :bangbang: El elemento `<div>` es un elemento de **bloque**.
+> **:bulb: El elemento `<div>` es un elemento de bloque**.
 
 ### Elemento `<span>`
 
@@ -654,7 +654,7 @@ El [elemento `<span>`](https://html.spec.whatwg.org/dev/text-level-semantics.htm
 consectetur voluptas temporibus.</p>
 ```
 
-> :bangbang: El elemento `<span>` es un elemento **en línea**.
+> **:bulb: El elemento `<span>` es un elemento en línea**.
 
 ### Elemento `<header>`
 
@@ -696,7 +696,7 @@ Desde HTML5.1, es posible anidar elementos `<header>` y `<footer>` dentro de otr
 </article>    
 ```
 
-> :bangbang: El elemento `<header>` es un elemento de **bloque**.
+> **:bulb: El elemento `<header>` es un elemento de bloque**.
 
 ### Elemento `<footer>`
 
@@ -720,7 +720,7 @@ El [elemento `<footer`](https://html.spec.whatwg.org/dev/sections.html#the-foote
 
 El elemento `<footer>` se puede utilizar independientemente del uso de un `<header>`, y es común verlo al final de la página o en la conclusión de una sección de contenido.
 
-> :bangbang: El elemento `<footer>` es un elemento de **bloque**.
+> **:bulb: El elemento `<footer>` es un elemento de bloque**.
 
 ### Elemento `<aside>`
 
@@ -737,7 +737,7 @@ El [elemento `<aside>`](https://html.spec.whatwg.org/dev/sections.html#the-aside
 </article>
 ```
 
-> :bangbang: El elemento `<aside>` es un elemento de **bloque**.
+> **:bulb: El elemento `<aside>` es un elemento de bloque**.
 
 ### Elemento `<nav>`
 
@@ -755,7 +755,7 @@ El [elemento `<nav>`](https://html.spec.whatwg.org/dev/sections.html#the-nav-ele
 
 Es importante destacar que no todo conjunto de enlaces tiene que estar dentro de un elemento `<nav>`. Sólo aquellos que son parte de la navegación principal o estructural del sitio deberían usarlo.
 
-> :bangbang: El elemento `<nav>` es un elemento de **bloque**.
+> **:bulb: El elemento `<nav>` es un elemento de bloque**.
 
 ### Elemento `<main>`
 
@@ -772,7 +772,7 @@ Este elemento debe ser único en el documento. Sólo puede haber un elemento `<m
 
 Además, no debe estar dentro de otros elementos de estructura como `<header>`, `<footer>`, `<nav>`, `<aside>` o `<article>`.
 
-> :bangbang: El elemento `<main>` es un elemento de **bloque**.
+> **:bulb: El elemento `<main>` es un elemento de bloque**.
 
 ### Elemento `<section>`
 
@@ -794,7 +794,7 @@ Es recomendable que cada `<section>` contenga su propio encabezado, para que que
 
 La utilización de varios elementos `<section>` facilita estructurar un documento en secciones distintas.
 
-> :bangbang: El elemento `<section>` es un elemento de **bloque**.
+> **:bulb: EL elemento `<section>` es un elemento de bloque**.
 
 ### Elemento `<article>`
 
@@ -813,7 +813,7 @@ El [elemento `<article`](https://html.spec.whatwg.org/dev/sections.html#the-arti
 </article>
 ```
 
-> :bangbang: El elemento `<article>` es un elemento de **bloque**.
+> **:bulb: El elemento `<article>` es un elemento de bloque**.
 
 ### Elemento `<details>`
 
@@ -838,23 +838,25 @@ El elemento `<details>` contiene un elemento `<summary>`, que actúa como el tí
 </section>
 ```
 
-> :bangbang: El elemento `<details>` es un elemento de **bloque**.
+> **:bulb: El elemento `<details>` es un elemento de bloque**.
 
 ## Contenedores de texto
 
-Los contenedores de texto son un tipo de contenedores semánticos que se utilizan para visualizar textos.
+Los contenedores de texto son elementos semánticos en HTML diseñados específicamente para mostrar y organizar el **contenido textual**. Cada uno de estos contenedores tiene un propósito definido y se utiliza para estructurar el texto en el documento, mejorando la legibilidad del contenido.
 
-Estos contenedores son todos de tipo **bloque**, lo que implica que utilizarán toda la longitud del contenedor padre. Por lo tanto, el contenedor siguiente se mostrará en una nueva línea.
+Todos los contenedores son de tipo **bloque**, lo que implica que utilizarán toda la longitud del contenedor padre. Cada uno de estos elementos comienza en una nueva línea automáticamente.
 
-Además, los navegadores insertar un espacio antes y después del bloque. Este comportamiento se puede modificar mediante reglas CSS.
+Además, los navegadores insertan un espacio antes y después de estos contenedores. Este comportamiento se puede modificar mediante reglas CSS.
 
-### Elementos de título `<hx>`
+### Elementos `<hx>`
 
-Los elementos de título `<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>`, `<h6>` permiten insertar hasta seis niveles de títulos jerárquicos en un documento.
+Los [elementos de título](https://html.spec.whatwg.org/dev/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements) en HTML permiten insertar hasta **seis niveles de títulos jerárquicos**, organizados desde el más importante (`<h1>`) hasta el menos importante (`<h6>`).
 
-Estos títulos tienen un fuerte significado semántico, siendo `<h1>` el más importante y `<h6>` el menos importante. Es aconsejable no saltarse ningún nivel.
+Los elementos de título son esenciales para mejorar la accesibilidad y el SEO, ya que permiten a los motores de búsqueda y lectores de pantalla interpretar mejor la estructura del contenido.
 
-Además, es perfectamente válido repetir niveles de jerarquía en contenedores distintos, es decir, es posible utilizar un título `<h1>` en varios contenedores `<article>` por ejemplo.
+> Es aconsejable **no saltarse ningún nivel** para mantener la coherencia del documento.
+
+Además, es perfectamente válido repetir niveles de jerarquía en contenedores distintos. Por ejemplo, es posible utilizar un título `<h2>` en varios contenedores `<section>`.
 
 ```html
 <body>
@@ -877,13 +879,13 @@ Además, es perfectamente válido repetir niveles de jerarquía en contenedores 
 </body>
 ```
 
-> :bangbang: Este elemento es un elemento de **bloque**.
+> **:bulb: Los elementos `<hx>` son elementos de bloque**.
 
-[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements)
+### Elemento `<p>`
 
-### Elemento de párrafo `<p>`
+El [elemento `<p>`](https://html.spec.whatwg.org/dev/grouping-content.html#the-p-element) se utiliza para definir un **párrafo de texto** en HTML. Este elemento organiza el contenido textual en bloques separados, lo que mejora la legibilidad y la estructura del documento.
 
-El elemento `<p>` permite insertar el texto actual en un párrafo.
+Cada párrafo se considera un bloque de texto autónomo y siempre comenzará en una nueva línea.
 
 ```html
 <p>The little kitten gently seated herself on a piece of carpet.</p>
@@ -898,13 +900,15 @@ El elemento `<p>` permite insertar el texto actual en un párrafo.
 </fieldset>
 ```
 
-> :bangbang: Este elemento es un elemento de **bloque**.
+> **:bulb: El elemento `<p>` es un elemento de bloque**.
 
-[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/grouping-content.html#the-p-element)
+### Elemento `<blockquote>`
 
-### Elemento de citas `<blockquote>`
+El [elemento `<blockquote>`](https://html.spec.whatwg.org/dev/grouping-content.html#the-blockquote-element) se utiliza para mostrar citas o textos largos extraídos de fuentes externas. Este elemento añade una sangría o un estilo especial para destacar el contenido citado del texto normal.
 
-El elemento `<blockquote>` permite mostrar un texto extraído de un origen externo con un formato que lo distingue del texto normal. Este elemento sirve de contenedor para otros elementos como títulos, párrafo, imagen, etcétera...
+Es un contenedor flexible. Puede incluir otros elementos como títulos, párrafo, imagen, etc...
+
+Se puede especificar el origen de la cita mediante el atributo `cite`.
 
 ```html
 <blockquote>
@@ -912,13 +916,13 @@ El elemento `<blockquote>` permite mostrar un texto extraído de un origen exter
 </blockquote>
 ```
 
-> :bangbang: Este elemento es un elemento de **bloque**.
+> **:bulb: El elemento `<blockquote>` es un elemento de bloque**.
 
-[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/grouping-content.html#the-blockquote-element)
+### Elemento `<address>`
 
-### Elemento de direcciones `<address>`
+El [elemento `<address>`](https://html.spec.whatwg.org/dev/sections.html#the-address-element) se utiliza para representar la información de contacto de una persona, empresa u organización dentro de un documento. Se puede utilizar en diversas partes del documento, generalmente dentro de un pie de página.
 
-El elemento `<address>` se utiliza para mostrar direcciones de todo tipo dentro de un documento. Este elemento permite anidar otros elementos en su interior.
+Este elemento puede contener otros elementos en su interior como enlaces, etc...
 
 ```html
 <footer>
@@ -930,15 +934,13 @@ El elemento `<address>` se utiliza para mostrar direcciones de todo tipo dentro 
 </footer>
 ```
 
-> :bangbang: Este elemento es un elemento de **bloque**.
+> **:bulb: El elemento `<address>` es un elemento de bloque**.
 
-[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/sections.html#the-address-element)
+### Elemento `<pre>`
 
-### Elemento de texto preformateado `<pre>`
+El [elemento `<pre>`](https://html.spec.whatwg.org/dev/grouping-content.html#the-pre-element) se utiliza para mostrar texto preformateado, es decir, conserva los espacios en blanco, saltos de línea y tabulaciones tal como se escriben en el código fuente. A diferencia de otros elementos HTML, no ignora los espacios en blanco. Es ideal para representar fragmentos de código o cualquier otro tipo de texto que requiera una estructura específica.
 
-El texto preformateado, insertado con el elemento `<pre>`, permite insertar texto que se formateará con las convenciones tipográficas usuales y no con elementos HTML.
-
-Por ejemplo, para representar código, el elemento `<pre>` puede ser utilizado junto al elemento `<code>`:
+Se usa frecuentemente junto con el elemento `<code>` para mostrar fragmentos de código.
 
 ```html
 <p>This is the <code>Panel</code> constructor:</p>
@@ -953,25 +955,25 @@ Por ejemplo, para representar código, el elemento `<pre>` puede ser utilizado j
 </pre>
 ```
 
-> :bangbang: Este elemento es un elemento de **bloque**.
-
-[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/grouping-content.html#the-pre-element)
+> **:bulb: El elemento `<pre>` es un elemento de bloque**.
 
 ### Elemento `<hr>`
 
-Este elemento `<hr>` no contiene texto y solo muestra una línea horizontal que permite separar diferentes partes de un contenido.
+El [elemento `<hr>`](https://html.spec.whatwg.org/dev/grouping-content.html#the-hr-element) inserta una línea horizontal en el documento y se utiliza como un **divisor visual** entre secciones de contenido, facilitando la separación de ideas o bloques de texto dentro de una página web.
 
-> :bangbang: Este elemento es un elemento de **bloque**.
+Se puede personalizar con CSS para ajustar su estilo, grosor, color, etc.
 
-[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/grouping-content.html#the-hr-element)
+> **:bulb: El elemento `<hr>` es un elemento de bloque**.
 
-### Elemento de lista no ordenada `<ul>`
+### Elemento `<ul>`
 
-Las listas no ordenadas o _"unordered list"_ permite listar los datos que se mostrarán con una **viñeta** delante de cada ítem. Para ello se utiliza el elemento `<ul>` para definir la lista.
+El [elemento `<ul>`](https://html.spec.whatwg.org/dev/grouping-content.html#the-ul-element) se utiliza para crear **listas no ordenadas** (_unordered lists_) en HTML. Los elementos de la lista se presentan con una viñeta o símbolo delante de cada ítem.
 
-Cada ítem de la lista o _"list item"_ se ubica en un elemento `<li>`. Se suele emplear para barras de navegación ya que puede considerarse que son listas de enlaces.
+Cada ítem de la lista se define con el elemento `<li>`, lo que lo convierte en un bloque individual dentro de la lista.
 
-> :warning: La etiqueta de cierre `</li>` puede omitirse si a continuación hay otro elemento `<li>` o no hay más contenido en el elemento padre.
+Se utiliza comúnmente para barras de navegación y listas de elementos de cualquier tipo, donde el orden no es importante.
+
+> :warning: La etiqueta de cierre `</li>` **puede omitirse** si a continuación hay otro elemento `<li>` o no hay más contenido en el elemento padre.
 
 ```html
 <p>I have lived in the following countries:</p>
@@ -983,13 +985,15 @@ Cada ítem de la lista o _"list item"_ se ubica en un elemento `<li>`. Se suele 
 </ul>
 ```
 
-> :bangbang: Este elemento es un elemento de **bloque**.
+> **:bulb: El elemento `<ul>` es un elemento de bloque**.
 
-[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/grouping-content.html#the-ul-element)
+### Elemento `<menu>`
 
-### Elemento de lista no ordenada `<menu>`
+El [elemento `<menu>`](https://html.spec.whatwg.org/dev/grouping-content.html#the-menu-element) es una alternativa semántica al uso de listas no ordenadas (`<ul>`) para representar **menús o barras de herramientas**, donde cada elemento representa un comando o acción que el usuario puede ejecutar o activar.
 
-Este elemento `<menu>` es una alternativa semántica al uso de elementos `<ul>` para representar un menú o barra de herramientas donde cada elemento representa un comando o acción que el usuario puede ejecutar o activar.
+Es útil en interfaces que contienen opciones de comandos o botones, como menús contextuales o barras de herramientas.
+
+Cada opción del menú se define con un elemento `<li>`, que puede contener botones, enlaces u otros elementos interactivos.
 
 ```html
 <menu>
@@ -999,15 +1003,15 @@ Este elemento `<menu>` es una alternativa semántica al uso de elementos `<ul>` 
 </menu>
 ```
 
-[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/grouping-content.html#the-menu-element)
+> **:bulb: El elemento `<menu>` es un elemento de bloque**.
 
-### Elemento de lista ordenada `<ol>`
+### Elemento `<ol>`
 
-Las listas ordenadas o _"ordered list"_ permiten listar datos que se mostrarán con una **cifra** delante de cada ítem. Para ello se utiliza el elemento `<ol>` para definir la lista.
+El [elemento `<ol>`](https://html.spec.whatwg.org/dev/grouping-content.html#the-ol-element) se utiliza para crear **listar ordenadas** (_ordered list_) en HTML. Los elementos de la lista se presentan con una **cifra** delante de cada ítem.
 
-Cada ítem de la lista o _"list item"_ se ubica en un elemento `<li>`. Este elemento `<li>` puede utilizar el atributo _"value"_ para especificar el valor de visualización, es decir, el número o cifra que aparecerá delante del ítem en la lista.
+Cada ítem de la lista se define utilizando el elemento `<li>`, y este puede incluir el atributo `value` para especificar un valor personalizado para el número que aparecerá al inicio del ítem.
 
-> :warning: La etiqueta de cierre `</li>` puede omitirse si a continuación hay otro elemento `<li>` o no hay más contenido en el elemento padre.
+> :warning: La etiqueta de cierre `</li>` **puede omitirse** si a continuación hay otro elemento `<li>` o no hay más contenido en el elemento padre.
 
 ```html
 <p>I have lived in the following countries:</p>
@@ -1021,14 +1025,14 @@ Cada ítem de la lista o _"list item"_ se ubica en un elemento `<li>`. Este elem
 
 El elemento `<ol>` tiene varios atributos:
 
-- _"start"_: permite indicar el valor inicial de la numeración
-- _"reversed"_: valor booleano que da la posibilidad de invertir el orden de la lista
-- _"type"_: permite cambiar el tipo de la enumeración:
-  - "1": para números decimales
-  - "a": para letras en minúsculas
-  - "A": para letras en mayúsculas
-  - "i": números romanos en minúsculas
-  - "I": números romanos en mayúsculas
+- `start`: define el valor inicial de la numeración.
+- `reversed`: valor booleano que invierte el orden de la lista, comenzando por el último ítem.
+- `type`: cambia el tipo de enumeración con los siguientes valores:
+  - `type="1"`: números decimales
+  - `type="a"`: letras minúsculas
+  - `type="A"`: letras mayúsculas
+  - `type="i"`: números romanos en minúsculas
+  - `type="I"`: números romanos en mayúsculas
 
 ```html
 <p>I have lived in the following countries</p>
@@ -1040,17 +1044,19 @@ El elemento `<ol>` tiene varios atributos:
 </ol>
 ```
 
-> :bangbang: Este elemento es un elemento de **bloque**.
+> **:bulb: El elemento `<ol>` es un elemento de bloque**.
 
-[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/grouping-content.html#the-ol-element)
+### Elemento `<dl>`
 
-### Elementos de lista de definiciones `<dl>`
+El [elemento `<dl>`](https://html.spec.whatwg.org/dev/grouping-content.html#the-dl-element) permite crear listas de definiciones, ideales para describir términos específicos.
 
-Las listas de definiciones permiten mostrar las definiciones de palabras o términos. Para crear una lista de definiciones hay tres elementos disponibles:
+Para crear una lista de definiciones hay tres elementos disponibles:
 
-- `<dl>` _"description list"_: permite definir la lista de definición
-- `<dt>` _"description term"_: indica el término que se va a definir
-- `<dd>` _"description definition"_: da la definición del término, identada respecto al término.
+- `<dl>`: define la lista de definiciones (_description list_).
+
+- `<dt>`: indica el término que se va a definir (_description term_).
+
+- `<dd>`: proporciona la definición del término (_description definition_), que se identifica respecto al término.
 
 ```html
 <dl>
@@ -1062,45 +1068,43 @@ Las listas de definiciones permiten mostrar las definiciones de palabras o térm
 </dl>
 ```
 
-> :bangbang: Este elemento es un elemento de **bloque**.
-
-[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/grouping-content.html#the-dl-element)
+> **:bulb: El elemento `<dl>` es un elemento de bloque**.
 
 ## Formateo del texto
 
-Para el formateo de texto con etiquetas HTML, existen una serie de etiquetas, algunas de las cuales son semánticas y proporcionan información del contenido y otras son etiquetas no semánticas que no proporcionan ninguna información y que provienen de versiones anteriores de HTML.
+El formateo de texto en HTML se puede lograr mediante una variedad de etiquetas, que **se dividen en semánticas y no semánticas**. Las etiquetas semánticas proporcionan información sobre el contenido, mientras que las no semánticas, que provienen de versiones anteriores de HTML, no lo hacen.
 
 ### Formateo semántico del texto
 
-El formateo semántico permite resaltar palabras en un contenedor de tipo bloque con elementos de tipo en línea.
+El formateo semántico permite resaltar palabras en un contenedor de tipo bloque con elementos en línea.
 
-- `<strong>`: marcado semántica de especial énfasis marcando en negrita (y no de resaltado en negrita como popularmente se cree)
+- `<strong>`: marcado semántico que indica especial énfasis, presentando el texto en negrita (no solo como resaltado).
 
-- `<em>`: marcado semántico de énfasis sencillo aplicando una cursiva.
+- `<em>`: marcado semántico que aplica énfasis sencillo, mostrando el texto en cursiva.
 
-- `<ins>`: marcado semántico para subrayar un texto
+- `<ins>`: marcado semántico para indicar texto que debe ser subrayado.
 
-- `<del>`: marcado semántico para tachar un texto
+- `<del>`: marcado semántico que muestra texto como tachado.
 
-- `<sub>` y `<sup>`: permite poner caracteres como índice o exponente respectivamente
+- `<sub>` y `<sup>`: permiten colocar caracteres como índices o exponentes, respectivamente.
 
-- `<small>`: marcado semántico para mostrar un texto más pequeño
+- `<small>`: marcado semántico para mostrar un texto más pequeño.
 
-- `<cite>` y `<q>`: marcado para indicar el título de una obra (en cursiva) y una cita al mismo (entre comillas dobles)
+- `<cite>` y `<q>`: marcado para indicar el título de una obra (en cursiva) y una cita de dicha obra (entre comillas dobles).
 
-- `<dfn>`: marcado semántico para una definición
+- `<dfn>`: marcado semántico para definir un término.
 
-- `<abbr>`: marcado semántico para una abreviatura
+- `<abbr>`: marcado semántico para representar una abreviatura.
 
-- `<code`>: marcado semántica para código informático
+- `<code`>: marcado semántica para indicar código informático.
 
-- `<mark>`: marcado semántico que destaca un texto
+- `<mark>`: marcado semántico que destaca un texto específico.
 
 - `<br>`: permite cambiar de línea dentro de un párrafo permaneciendo estructuralmente en el mismo párrafo
 
 ### Formateo no semántico
 
-Etiquetas que permiten un formateo del texto pero no proporcionan ninguna información semántica. Es conveniente siempre utilizar sus alternativas semánticas para proporcionar más información al navegador y al usuario.
+Estas etiquetas permiten el formateo del texto pero no brindan información semántica. Se recomienda utilizar siempre sus alternativas semánticas para proporcionar más contexto al navegador y al usuario.
 
 Por ejemplo, es recomendable utilizar la etiqueta `<strong>` antes que la etiqueta `<b>` para resaltar un texto.
 
@@ -1114,40 +1118,54 @@ Por ejemplo, es recomendable utilizar la etiqueta `<strong>` antes que la etique
 
 ### Caracteres especiales
 
-Los caracteres especiales como flechas o símbolos tienen la forma `&{code};`.
+En HTML, los caracteres especiales como flechas o símbolos se representan con **una notación de entidad**, que tiene la forma `&{code};`. Esto es especialmente útil para incluir caracteres que de otro modo podrían ser interpretados como parte del código HTML.
 
-Por ejemplo, un caracter muy utilizado es el espacio de no separación o _Non-breaking space_ que se denota como `&nbsp;`. Este tipo de separación no incluye un salto de línea.
+Un ejemplo común es el espacio de no separación (_Non-breaking space_), que se denota como `&nbsp;`. Este carácter permite crear un espacio que no se puede dividir con un salto de línea.
 
-[HTML Entities](https://www.w3schools.com/html/html_entities.asp), [HTML Symbols](https://www.w3schools.com/html/html_symbols.asp) o [Using Emojis in HTML](https://www.w3schools.com/html/html_emojis.asp)
+Algunos recursos útiles para caracteres especiales en HTML incluyen:
+
+- [HTML Entities](https://www.w3schools.com/html/html_entities.asp): una lista completa de entidades HTML para utilizar.
+- [HTML Symbols](https://www.w3schools.com/html/html_symbols.asp): un recurso que proporciona una variedad de símbolos disponibles en HTML.
+- [Using Emojis in HTML](https://www.w3schools.com/html/html_emojis.asp): instrucciones sobre cómo utilizar emojis en documentos HTML.
+
+Ejemplos de caracteres especiales:
+
+- `&nbsp;`
+- `&rarr;` = →
+- `&larr;` = ←
+- `&copy;` = ©
+- `&hearts;` = ♥
+- `&lt;` = <
+- `&gt;` = >
 
 ## Los enlaces
 
-La Web esta formada por enlaces de hipertexto, que representan una conexión entre dos recursos. En un documento HTML hay dos tipos de enlaces:
+La Web esta formada por [enlaces](https://html.spec.whatwg.org/dev/links.html#links), que representan una conexión entre dos recursos, siendo uno de ellos el propio documento.
 
-- Enlaces a **recursos externos** como hojas de estilo CSS o ficheros JavaScript que serán procesados por el _"user agent"_ o navegador.
+En un documento HTML hay tres tipos de enlaces:
 
-- Enlaces de **hipertexto** que son enlaces a otros recursos y que son accesibles mediante la interacción del usuario (pulsando sobre ellos, por ejemplo)
+- **Enlaces a recursos externos** como hojas de estilo CSS o ficheros JavaScript que serán procesados por el _user agent_ o navegador.
 
-Los enlaces son un elemento de tipo **en línea**.
+- **Enlaces de hipertexto** que son enlaces a otros recursos y que son accesibles mediante la interacción del usuario (como pulsar sobre ellos).
 
-[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/links.html#links)
+- **Enlaces a recuros internos** son enlaces a recursos dentro del documento actual, utilizados para proporcionar significado o comportamiento especial.
 
 ### Elemento `<a>`
 
-Los enlaces se crean con la etiquetas `<a>` aunque hay otras etiquetas como `<area>`, `<form>` y `<link>` que son enlaces especiales.
+Los enlaces se crean con [la etiqueta `<a>`](https://html.spec.whatwg.org/dev/text-level-semantics.html#the-a-element) aunque existen otras etiquetas como `<area>`, `<form>` y `<link>` que son enlaces especiales.
 
-Algunas atributos aplicables a los enlaces:
+Atributos aplicables a los enlaces:
 
-- **href**: obligatorio para indicar la URL de destino
-- **hreflang**: especifica el idioma de destino
-- **rel**: permite indicar el tipo de relación del enlace que se establece
-- **target**: da el contexto de apertura del enlace
-  - _blank: el destino se abre en una nueva ventana o una nueva pestaña
-  - _parent: el destino se abre en el elemento padre.
-  - _self: el destino se abre en el mismo navegador por lo que no hay cambio de contexto
-  - _top: el destino se abre en el padre superior en la jerarquía de ventanas
+- `href`: obligatorio para indicar la URL de destino.
+- `hreflang`: especifica el idioma de destino.
+- `rel`: indica el tipo de relación del enlace que se establece.
+- `target`: especifica el contexto de apertura del enlace:
+  - `target="_blank"`: el destino se abre en una nueva ventana o una nueva pestaña
+  - `target="_parent"`: el destino se abre en el elemento padre.
+  - `target="_self"`: el destino se abre en el mismo navegador. No hay cambio de contexto.
+  - `target="_top"`: el destino se abre en el padre superior en la jerarquía de ventanas.
 
-Los enlaces son **relativos** cuando apuntan a un documento del mismo sitio web mientras que un enlace es **absoluto** si apunta a otro sitio web.
+Los enlaces son **relativos** cuando apuntan a un documento del mismo sitio web, mientras que un enlace es **absoluto** si apunta a otro sitio web.
 
 ```html
 <nav>
@@ -1170,25 +1188,23 @@ Los enlaces son **relativos** cuando apuntan a un documento del mismo sitio web 
 </section>
 ```
 
-Los enlaces **internos** al propio documento facilitan la navegación al usurario cuando el documento tiene una longitud elevada. Para implementar un enlace interno es necesario que el destino del enlace tenga el atributo `id`
+Los enlaces **internos** al propio documento facilitan la navegación al usuario cuando el documento tiene una longitud elevada. Para implementar un enlace interno es necesario que el destino del enlace tenga el atributo `id`.
 
-[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/text-level-semantics.html#the-a-element)
+> **:bulb: El elemento `<a>` es un elemento en línea**.
 
 ## Tablas
 
-Las tablas se utilizan para mostrar datos tabulares. Cualquier otro uso, como por ejemplo estructurar un documento, no es correcto.
+Las tablas se utilizan para mostrar datos tabulares. Cualquier otro uso, como estructurar un documento, no es correcto. El elemento padre para contener una tabla es el [elemento `<table>`](https://html.spec.whatwg.org/dev/tables.html#the-table-element).
 
-El elemento padre para contener una tabla es `<table>`.
+Elementos de una tabla:
 
-Otros elementos son:
+- `<tr>`: permite insertar filas en la tabla (_table row_).
 
-- `<tr>` - _"table row"_: permite insertar filas en la tabla
+- `<td>`: permite crear celdas en cada fila (_table data_).
 
-- `<td>` - _"table data"_: permite crear celdas en cada fila
+- `<th>`: permite crear celdas con encabezado (_table header_).
 
-- `<th>` - _"table header"_: permite crear celdas con encabezado
-
-- `<caption>`: permite añadir un título a la tabla
+- `<caption>`: permite añadir un título a la tabla.
 
 ```html
 <table>
@@ -1214,58 +1230,69 @@ Otros elementos son:
 </table>
 ```
 
-Las etiquetas de cierre `</tr>`, `</td>`, `</th>` y `</caption>` se pueden omitir en determinados supuestos. La tabla anterior quedaría:
-
-```html
-<table>
-  <caption>Resultados primer trimestre
-  <tr>
-    <th>&nbsp;
-    <th>Enero
-    <th>Febrero
-    <th>Marzo
-  <tr>
-    <th>Nantes
-    <td>1.84M
-    <td>2.33M
-    <td>1.39M
-  <tr>
-    <th>París
-    <td>4.24M
-    <td>2.29M
-    <td>5.17M
-</table>
-```
+Las etiquetas de cierre `</tr>`, `</td>`, `</th>` y `</caption>` se pueden omitir en determinados supuestos.
 
 Para fusionar celdas horizontalmente se utiliza el atributo `colspan` mientras que para fusionar celdas verticalmente se utiliza el atributo `rowspan`. En ambos casos se indica el número de celdas a fusionar.
 
 Para estructurar la tabla se pueden usar las etiquetas `<thead>`, `<tbody>` y `<tfoot>` de forma que se puedan agrupar las filas según su significado.
 
-[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/tables.html#the-table-element)
+```html
+<table>
+  <caption>Resultados primer trimestre</caption>
+  <thead>
+    <tr>
+      <th>&nbsp;</th>
+      <th>Enero</th>
+      <th>Febrero</th>
+      <th>Marzo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Nantes</th>
+      <td>1.84M</td>
+      <td>2.33M</td>
+      <td>1.39M</td>
+    </tr>
+    <tr>
+      <th>París</th>
+      <td>4.24M</td>
+      <td>2.29M</td>
+      <td>5.17M</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <th>Total</th>
+      <td>6.08M</td>
+      <td>4.62M</td>
+      <td>6.56M</td>
+    </tr>
+  </tfoot>
+</table>
+```
 
 ## Imágenes
 
-[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/images.html)
+Las [imágenes](https://html.spec.whatwg.org/dev/images.html) son elementos fundamentales en la web, ya que enriquecen el contenido visual y mejoran la experiencia del usuario. En HTML, las imágenes se insertan normalmente utilizando la etiqueta `<img>`, que permite incluir diversos formatos de imagen como JPEG, PNG y GIF.
 
 ### Elemento `<img>`
 
-Para insertar una imagen en un documento HTML se utiliza la etiqueta `<img>`.
+Para insertar una imagen en un documento HTML se utiliza [la etiqueta `<img>`](https://html.spec.whatwg.org/dev/embedded-content.html#the-img-element).
 
 El atributo `src` es **obligatorio** para indicar la ruta de acceso a la imagen a mostrar. Esta ruta puede ser relativa al propio sitio web o absoluta.
 
-Con el atributo `alt` se puede mostrar un texto alternativo a la imagen si no se puede cargar.
+Con el [atributo `alt`](https://html.spec.whatwg.org/dev/images.html#alt) se puede mostrar un texto alternativo si la imagen no se puede cargar.
 
 Los atributos `width` y `height` permiten indicar el espacio asignado a la visualización de la imagen. Si no se informan, el navegador debe esperar a la carga del archivo de imagen para determinar sus dimensiones y reservar el espacio. En caso de que el tamaño de alto o ancho de la imagen difieran de los indicados en los atributos, éstos tendrán preferencia.
 
-[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/embedded-content.html#the-img-element)
-
 ### Elemento `<picture>`
 
-El elemento `<picture>` permite mostrar diferentes imágenes para diferentes dispositivos o tamaños de pantalla.
+El [elemento `<picture>`](https://html.spec.whatwg.org/dev/embedded-content.html#the-picture-element) permite mostrar diferentes imágenes para diferentes dispositivos o tamaños de pantalla. Este **elemento actúa como contenedor** y ofrece una manera flexible de manejar imágenes responsivas.
 
-Este elemento actua como contenedor. Dentro de este contenedor podemos utilizar etiquetas `<img>` o `<source>` para indicar diferentes imágenes a través del atributo `srcset`. El navegador utilizará el primer elemento que mejor se ajuste a la pantalla del dispositivo.
+Dentro del contenedor `<picture>` podemos utilizar etiquetas `<img>` o `<source>` para especificar diferentes imágenes a través del atributo `srcset`. El navegador elegirá automáticamente el primer elemento que mejor se ajuste a las características del dispositivo del usuario.
 
-Es recomendable especifiar una etiqueta `<img>` en último lugar dentro del contenedor `<picture>` que será utilizada por los navegadores que no soporten la etiqueta `<picture>`.
+Es recomendable especifiar una etiqueta `<img>` al final del contenedor `<picture>` que será utilizada por los navegadores que no soporten la etiqueta `<picture>`.
 
 ```html
  <picture>
@@ -1274,8 +1301,6 @@ Es recomendable especifiar una etiqueta `<img>` en último lugar dentro del cont
   <img src="img_girl.jpg">
 </picture> 
 ```
-
-[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/embedded-content.html#the-picture-element)
 
 ## Formularios
 
@@ -1414,27 +1439,23 @@ La forma de asociar el elemento `<label>` con el campo es medidante el atributo 
 
 ## Recursos multimedia embebidos
 
-Los recursos multimedia embebidos pueden ser tanto audio como video.
+Los [recursos multimedia](https://html.spec.whatwg.org/dev/media.html#media-elements) embebidos, que incluyen tanto audio como vídeo, son elementos clave para enriquecer la experiencia del usuario en la web.
 
-Para comprimir un fichero multimedia se necesita un **codec**, que es un acrónimo de COdificador-DEcodificador como por ejemplo VP9, MO3, AAC, H.265, etcétera...
-
-Para distribuir estos ficheros, es necesario "empaquetarlos" en un formato de transporte como por ejemplo .ogg, .mp4 o .webm.
-
-[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/media.html#media-elements)
+Para poder reproducir archivos multimedia, se requiere un **_codec_**, que es un acrónimo de **COdificador-DEcodificador**. Algunos ejemplos de códecs son VP9, MP3, AAC, y H.265. Una vez codificados, los archivos multimedia deben ser "empaquetados" en un formato de transporte como .ogg, .mp4 o .webm.
 
 ### Elemento `<source>`
 
-Este elemento `<source>` se puede utilizar con elementos `<img>`, `<video>` y `<audio>`.
+El [elemento `<source>`](https://html.spec.whatwg.org/dev/embedded-content.html#the-source-element) se puede utilizar con los elementos `<img>`, `<video>` y `<audio>`.
 
-Este elemento permite definir diferentes fuentes de datos para un mismo elemento. Será el navegador el que elija el origen que mejor se ajuste.
-
-[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/embedded-content.html#the-source-element)
+Este elemento permite **definir diferentes fuentes de datos** para un mismo recurso multimedia. El navegador elegirá automáticamente el origen que mejor se ajuste a sus capacidades y preferencias del usuario.
 
 ### Elemento `<video>`
 
-El elemento `<video>` permite insertar archivos de vídeo en un documento web. El atributo `src` del elemento indica el archivo a utilizar.
+El [elemento `<video>`](https://html.spec.whatwg.org/dev/media.html#the-video-element) permite insertar archivos de vídeo en un documento web.
 
-Sin embargo, es recomendable utilizar la etiqueta `<source>` para indicar distintas fuentes para un mismo clip, por ejemplo indicando diferentes formatos. Además, permite indicar un texto que será mostrado si el navegador no tiene soporte para esta etiqueta:
+Aunque se puede utilizar el atributo `src` para indicar el archivo de vídeo a utilizar, es recomendable emplear la etiqueta `<source>` para proporcionar múltiples formatos y garantizar la compatibilidad en diferentes navegadores.
+
+También es posible incluir un mensaje de texto que se mostrará si el navegador no admite la reproducción de vídeos.
 
 ```html
 <video controls poster="intro.jpg">
@@ -1444,31 +1465,33 @@ Sin embargo, es recomendable utilizar la etiqueta `<source>` para indicar distin
 </video>
 ```
 
-El atributo booleano `autoplay` permite reproducir automáticamente el vídeo.
+Atributos importantes:
 
-Para controlar la reproducción está disponible el atributo booleano `controls` cuyo aspecto varía en función del navegador.
+- `autoplay` (booleano): reproduce automáticamente el vídeo al cargar la página.
 
-Con el atributo `poster` se puede indicar una imagen de apertura.
+- `controls` (booleano): muestra controles de reproducción nativos que permiten al usuario pausar, avanzar y retroceder.
 
-Se pueden especifiar las dimensiones del vídeo con los atributos `width` y/o `height`.
+- `poster`: especifica una imagen que se mostrará antes de que se inicie la reproducción del vídeo.
 
-Además, tenemos el atributo `loop` para reproducir el vídeo en bucle y el atributo `muted` para desactivar el sonido.
+- `width` y/o `height`: permiten definir las dimensiones del vídeo.
 
-Los archivos de vídeo son archivos pesados por lo que es recomendable precargarlos para que la reproducción sea más fluida:
+- `loop` (booleano): hace que el vídeo se reproduzca en bucle.
 
-- `preload="auto"`: indica que es el navegador el encargado de descargar los datos necesarios
+- `muted` (booleano): desactiva el sonido del vídeo.
 
-- `preload="metadata"`: especifica al navegador que es necesario descargar los metadatos del vídeo para obtener la información sobre tamaño, duración, etcétera...
+Para optimizar la experiencia de reproducción, se recomienda precargar el vídeo utilizando el atributo `preload` con los siguientes valores:
 
-- `preload="none"`: indica al navegador que no hay que precargar el vídeo
+- `preload="auto"`: descarga automáticamente los datos necesarios.
 
-[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/media.html#the-video-element)
+- `preload="metadata"`: descarga solo los metadatos del vídeo (duración, tamaño, etc..).
+
+- `preload="none"`: no precarga el vídeo.
 
 ### Elemento `<audio>`
 
-El elemento `<audio>` permite insertar archivos de audio en un documento web. El atributo `src` del elemento indica el archivo a utilizar.
+El [elemento `<audio>`](https://html.spec.whatwg.org/dev/media.html#the-audio-element) permite insertar archivos de audio en un documento web.
 
-Sin embargo, es recomendable utilizar la etiqueta `<source>` para indicar distintas fuentes para un mismo clip, por ejemplo indicando diferentes formatos. Además, permite indicar un texto que será mostrado si el navegador no tiene soporte para esta etiqueta:
+Al igual que con el vídeo, se recomienda utilizar la etiqueta `<source>` para especificar diferentes formatos y ofrecer compatibilidad con múltiples navegadores:
 
 ```html
 <audio controls>
@@ -1478,25 +1501,35 @@ Sin embargo, es recomendable utilizar la etiqueta `<source>` para indicar distin
 </audio>
 ```
 
-Para controlar la reproducción está disponible el atributo booleano `controls` cuyo aspecto varía en función del navegador.
+Atributos importantes:
 
-[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/media.html#the-audio-element)
+- `controls`: muestra los controles para la reproducción de audio.
+
+- `autoplay`: reproduce el audio automáticamente al cargar la página.
+
+- `loop`: reproduce el audio en bucle.
+
+- `muted`: Desactiva el sonido del audio.
 
 ## Validación de errores en HTML
 
-En los lenguajes de marcas como HTML, los navegadores son más permisivos, ya que en el caso de encontrar un error, intentan «deducir» lo que realmente se quería indicar y continuan con la carga del documento.
+En los lenguajes de marcas como HTML, los navegadores suelen ser más permisivos. Cuando encuentran un error, intentan «deducir» la intención del desarrollador y continúan cargando el documento, lo que puede llevar a comportamientos inesperados.
 
-En nuestro código HTML podemos tener varios tipos de problemas:
+En un código HTML podemos encontrar varios tipos de problemas:
 
-- **Sintaxis**: El código está mal escrito y es incorrecto. El navegador podría no mostrar correctamente ciertos detalles.
-- **Accesibilidad**: El código no tiene porque estar mal escrito o ser incorrecto, sin embargo, tiene problemas que harán que no se vean bien en determinados dispositivos o que un usuario invidente o similar no pueda utilizarla.
-- **Posicionamiento (SEO)**: El código no tiene porque estar mal escrito o ser incorrecto, sin embargo, los buscadores como Google no aceptarán favorablemente la página y podría tener un rendimiento menor de posicionamiento SEO.
-- **Rendimiento**: El código no tiene porque estar mal escrito o ser incorrecto, sin embargo, el navegador puede ser lento a la hora de cargarlo o tardar en realizar sus tareas.
-- **Usabilidad**: El código no tiene porque estar mal escrito o ser incorrecto, sin embargo, la forma en la que se disponen los elementos o está pensado puede frustrar al usuario final que utiliza la web.
+- **Sintaxis**: se refiere a errores en la escritura del código que pueden impedir que ciertos elementos se muestren correctamente.
 
-Para asegurarnos de que nuestro código está correctamente escrito, podemos utilizar un **Validador HTML**, que no es más que un sistema que analiza nuestro código y nos dice el número de errores que tenemos, junto a una breve descripción del mismo para facilitar su corrección.
+- **Accesibilidad**: aunque el código puede ser técnicamente correcto, podría presentar problemas que dificulten su uso en determinados dispositivos o por personas con discapacidad visual.
 
-Este proceso de validación se puede realizar mediante la herramienta oficial [HTML Validator de W3C](https://validator.w3.org/) u otras vías de validación mediante [plugins para el IDE o paquetes NPM](https://lenguajehtml.com/html/introduccion/validacion-html/).
+- **Posicionamiento (SEO)**: un código bien escrito no garantiza un buen posicionamiento en buscadores. Problemas en la estructura del HTML pueden afectar la forma en que los motores de búsqueda indexan la página.
+
+- **Rendimiento**: el código puede no tener errores sintácticos, pero una estructura ineficiente puede ralentizar la carga del navegador o provocar retrasos en las tareas.
+
+- **Usabilidad**: aunque el código sea correcto, la disposición de los elementos puede frustrar a los usuarios, afectando su experiencia en la web.
+
+Para asegurarnos de que nuestro código HTML esté correctamente escrito y libre de errores, podemos utilizar un **Validador HTML**. Esta herramienta analiza nuestro código y proporciona un informe sobre el número de errores encontrados, junto con descripciones que facilitan su corrección.
+
+El proceso de validación se puede realizar a través de la herramienta oficial [HTML Validator de W3C](https://validator.w3.org/) o mediante [plugins para el IDE o paquetes NPM](https://lenguajehtml.com/html/introduccion/validacion-html/) que permiten una validación integrada en el flujo de trabajo del desarrollo.
 
 ---
 
