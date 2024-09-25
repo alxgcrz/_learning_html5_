@@ -1304,67 +1304,56 @@ Es recomendable especifiar una etiqueta `<img>` al final del contenedor `<pictur
 
 ## Formularios
 
-Un formulario es un componente de una página web que tiene controles de formulario, tales como texto, botones, casillas de verificación, rango o controles de selector de color.
+Los [formularios](https://html.spec.whatwg.org/dev/forms.html#forms) son una parte esencial de la interacción en la web, permitiendo a los usuarios enviar información y datos a los servidores para su procesamiento.
 
-Un usuario puede interactuar con un formulario de este tipo, proporcionando datos que luego se pueden enviar al servidor para su posterior procesamiento.
+Los formularios constan de diferentes tipos de controles, como campos de texto, botones, casillas de verificación, menús desplegables, selectores, etc..., brindando una forma versátil de recopilar información.
 
-[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/forms.html#forms)
+### Atributos más utilizados
 
-### Atributos comunes
+Los elementos HTML relacionados con formularios pueden utilizar diversos atributos que controlan su comportamiento y apariencia. A continuación se detallan algunos de los atributos más comunes y útiles para gestionar la funcionalidad de los campos de entrada, aunque no todos ellos se aplican a todos los tipos de elementos de formulario:
 
-Los elementos HTML dedicados a los formularios comparten un gran número de atributos comunes:
+- **`id`**: identifica de forma única el campo dentro del formulario.
 
-- `autocomplete`: permite el autocompletado de los campos.
+- **`name`**: asigna un nombre al campo, que se utilizará al recuperar los datos enviados.
 
-- `autofocus`: para activar inmediatamente el campo
+- **`autocomplete`**: permite el autocompletado de los campos.
 
-- `disabled`: es un atributo booleano. Desactiva el campo y por tanto el usuario no lo puede utilizar:
-  - elementos de tipo `button`, `input`, `select`, `textarea`
+- **`autofocus`** (booleano): activa inmediatamente el campo al cargar la página.
+
+- **`disabled`** (booleano): desactiva el campo, impidiendo su uso por parte del usuario.
+
+- **`placeholder`**: muestra un texto indicativo dentro del campo.
+
+- **`readonly`** (booleano):  marca el campo como de solo lectura.
   
-  - elementos contenidos en `fieldset`
-
-- `id`: permite identificar de forma única el campo
-
-- `name`:da nombre al campo
-
-- `placeholder`: muestra un texto como indicación del campo
-
-- `readonly`: indica que el campo es de solo lectura
-
-- `required`: indica que el campo es obligatorio
-
-- `name`: da nombre al campo. Este nombre se utilizará al recuperar los datos enviados por el formulario.
-
+- **`required`** (booleano): indica que el campo es obligatorio para el envío del formulario.
+  
 ### Elemento `<form>`
 
-El elemento `<form>` es el contenedor de un formulario.
+El [elemento `<form>`](https://html.spec.whatwg.org/dev/forms.html#the-form-element) es el contenedor de un formulario. Este elemento tiene varios atributos:
 
-Este elemento tiene varios atributos:
+- **`action`**: la URL del script que va a hacerse cargo de los datos introducidos en el formulario.
+  
+- **`method`**: especifica si los datos se enviarán usando HTTP con el método `'POST'` o `'GET'`.
 
-- `action`: la URL del script que va a hacerse cargo de los datos introducidos en el formulario
+- **`name`**: asigna un nombre al formulario.
 
-- `method`: especifica si los datos se enviarán usando  HTTP con el método 'POST' o 'GET'.
-
-- `name`: asigna un nombre a un formulario
-
-- `enctype`: indica el tipo MIME de los datos enviados:
-  - _"application/x-www-form-urlencoded"_: formato por defecto. Los datos se codifican como pares clave-valor.
-  - _"multipart/form-data"_: para el envío de archivos
+- **`enctype`**: indica el tipo MIME de los datos enviados:
+  - _`"application/x-www-form-urlencoded"`_: formato por defecto. Los datos se codifican como pares clave-valor.
+  - _`"multipart/form-data"`_: para el envío de archivos.
 
 ```html
-<form action="backed.php" method="post" name="inscription" 
+<form action="backend.php" method="post" name="inscription" 
   enctype="application/x-www-form-urlencoded">
   ...
 </form>
 ```
 
-[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/forms.html#the-form-element)
-
 ### Elemento `<fieldset>`
 
-Para mejorar la visibilidad de los campos de un formulario se pueden agrupar mediante el elemento `<fieldset>`.
+El [elemento `<fieldset>`](https://html.spec.whatwg.org/dev/form-elements.html#the-fieldset-element) se utiliza para **agrupar visualmente los campos** de un formulario, mejorando así la organización y legibilidad del contenido. Es especialmente útil cuando tienes varios grupos de campos relacionados.
 
-Mediante el elemento `<legend>` se puede una leyenda o título.
+Se puede añadir una leyenda o título que describa el propósito del grupo de campos con el [elemento `<legend>`](https://html.spec.whatwg.org/dev/form-elements.html#the-legend-element).
 
 ```html
 <form method="post" action="order.cgi">
@@ -1377,29 +1366,105 @@ Mediante el elemento `<legend>` se puede una leyenda o título.
 </form>
 ```
 
-[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/form-elements.html#the-fieldset-element)
-
 ### Elemento `<label>`
 
-El elemento `<label>` permite asociar una etiqueta a un campo. Esta etiqueta se mostrará delante del campo y permite que se active el campo al pulsar sobre la etiqueta.
+El [elemento `<label>`](https://html.spec.whatwg.org/dev/forms.html#the-label-element) se utiliza para **asociar una etiqueta descriptiva a un campo** de formulario. Cuando el usuario pulsa en la etiqueta, el campo asociado se activa automáticamente, facilitando la interacción con el formulario.
 
-Este elemento facilita su utilización y facilita la accesibilidad a las personas con discapacidad visual.
+Este elemento facilita la utilización de los formularios y facilita la accesibilidad a las personas con discapacidad visual, ya que los lectores de pantalla leen la etiqueta asociada antes de los campos del formulario.
 
-La forma de asociar el elemento `<label>` con el campo es medidante el atributo `for` y el campo `id` del campo o simplemente poniendo el campo dentro de la etiqueta `<label>`. Ambas formas son aceptables:
+Hay dos formas de asociar el elemento `<label>` con el campo del formulario:
+
+1. Asocia la etiqueta `<label>` con el campo mediante el valor del atributo `for`, que debe coincidir con el atributo `id` del campo correspondiente.
+
+2. Encapsular el campo del formulario dentro del `<label>`, por lo que ya no es necesario usar el atributo `for` ni el `id`.
+
+Ambas formas son válidas y aceptadas en HTML.
 
 ```html
 <form method="post" action="order.cgi">
-  <p><label for="fullName">Full name: <input id="fullName" name="fn"></label></p>
-  <p><label>Age: <input name="age" type="number" min="0"></label></p>
-  <p><label>Post code: <input name="pc"> <small>Format: AB12 3CD</small></label></p>
+  <!-- Usando el atributo for e id -->
+  <p><label for="fullName">Nombre completo: <input id="fullName" name="fn"></label></p>
+
+  <!-- Encapsulando el campo dentro del label -->
+  <p><label>Edad: <input name="age" type="number" min="0"></label></p>
+  <p><label>Código postal: <input name="pc"> <small>Formato: AB12 3CD</small></label></p>
 </form>
 ```
-  
-[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/forms.html#the-label-element)
+
+Elementos que pueden _'etiquetables'_ con la etiqueta `<label>`:
+
+- `<button>`
+- `<input>` (si no estan en el estado _'hidden'_)
+- `<meter>`
+- `<output>`
+- `<progress>`
+- `<select>`
+- `<textarea>`
+- `<button>`
+- elementos personalizados
 
 ### Elemento `<input>`
 
-[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/input.html#the-input-element)
+El [elemento `<input>`](https://html.spec.whatwg.org/dev/input.html) es uno de los elementos más versátiles de los formularios HTML, ya que permite al usuario introducir diferentes tipos de datos. El comportamiento y la apariencia de un `<input>` dependen del valor del atributo `type`, que define el tipo de dato que puede recibir.
+
+Tipos comunes de `<input>`:
+
+- **`text`**: entrada de texto de una sola línea.
+
+  ```html
+  <input type="text" name="nombre" placeholder="Introduce tu nombre">
+  ```
+
+- **`password`**: campo de entrada para contraseñas, donde los caracteres introducidos se muestran enmascarados.
+
+  ```html
+  <input type="password" name="password" placeholder="Introduce tu contraseña">
+  ```
+
+- **`email`**: campo de entrada para correos electrónicos, que puede validar el formato del correo automáticamente.
+
+  ```html
+  <input type="email" name="correo" placeholder="Introduce tu correo">
+  ```
+
+- **`number`**: campo de entrada para números. Puedes establecer límites mediante los atributos `min` y `max`.
+
+  ```html
+  <input type="number" name="edad" min="1" max="120">
+  ```
+
+- **`radio`**: permite seleccionar una opción entre varias. Todos los botones de radio con el mismo `name` están agrupados.
+
+  ```html
+  <input type="radio" name="genero" value="hombre"> Hombre
+  <input type="radio" name="genero" value="mujer"> Mujer
+  ```
+
+- **`checkbox`**: permite seleccionar o deseleccionar una opción,
+
+  ```html
+  <input type="checkbox" name="terminos" value="acepto"> Acepto los términos y condiciones
+  ```
+
+- **`date`**: campo de entrada para seleccionar una fecha.
+
+  ```html
+  <input type="date" name="fecha_nacimiento">
+  ```
+
+- **`file`**: permite subir archivos desde el sistema del usuario.
+
+  ```html
+  <input type="file" name="curriculum">
+  ```
+
+- **`submit`**: botón que envía los datos del formulario al servidor.
+
+  ```html
+  <input type="submit" value="Enviar">
+  ```
+
+Los navegadores modernos proporcionan validación automática para tipos como `email`, `number` y `url`, lo que facilita la captura de datos válidos.
 
 ### Elemento `<button>`
 
@@ -1409,17 +1474,74 @@ La forma de asociar el elemento `<label>` con el campo es medidante el atributo 
 
 [Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/form-elements.html#the-select-element)
 
-### Elemento `<datalist>`
-
-[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/form-elements.html#the-datalist-element)
-
 ### Elemento `<optgroup>`
 
-[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/form-elements.html#the-optgroup-element)
+El [elemento `<optgroup>`](https://html.spec.whatwg.org/dev/form-elements.html#the-optgroup-element) se utiliza dentro de un elemento `<select>` para **agrupar opciones relacionadas**. Esto ayuda a organizar y categorizar las opciones disponibles, facilitando así la selección para los usuarios.
+
+El **atributo `label`** especifica una etiqueta que describe el grupo de opciones. Esta etiqueta es lo que se mostrará al usuario para identificar el grupo.
+
+```html
+<select>
+  <optgroup label="Frutas">
+    <option value="apple">Manzana</option>
+    <option value="banana">Plátano</option>
+    <option value="orange">Naranja</option>
+  </optgroup>
+  <optgroup label="Verduras">
+    <option value="carrot">Zanahoria</option>
+    <option value="broccoli">Brócoli</option>
+    <option value="lettuce">Lechuga</option>
+  </optgroup>
+</select>
+```
 
 ### Elemento `<option>`
 
-[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/form-elements.html#the-option-element)
+El [elemento `<option>`](https://html.spec.whatwg.org/dev/form-elements.html#the-option-element) se utiliza dentro de los elementos `<select>` y `<optgroup>` para definir **las opciones que un usuario puede seleccionar**. Cada `<option>` representa una única elección dentro de un conjunto.
+
+- El **atributo `value`** especifica el valor que se enviará al servidor cuando se selecciona la opción.
+
+- El **atributo `label`** permite especificar una etiqueta alternativa que se mostrará en la lista desplegable. Esto puede ser útil si deseas que el usuario vea un texto diferente al valor que se enviará.
+
+- El **atributo `selected`** (booleano) indica que la opción debe estar seleccionada por defecto cuando se carga el formulario.
+
+- El **atributo `disabled`** (booleano) desactiva la opción, impidiendo que el usuario la seleccione.
+
+```html
+<select>
+  <option value="apple">Manzana</option>
+  <option value="banana" selected>Plátano</option>
+  <option value="orange">Naranja</option>
+  <option value="grape" disabled>Uva (no disponible)</option>
+</select>
+```
+
+### Elemento `<datalist>`
+
+El [elemento `<datalist>`](https://html.spec.whatwg.org/dev/form-elements.html#the-datalist-element) se utiliza para proporcionar **una lista de opciones predefinidas** para un campo de entrada. Este elemento mejora la experiencia del usuario al permitirle seleccionar de una lista sugerida mientras escribe, lo que facilita la entrada de datos y puede ayudar a evitar errores de escritura.
+
+Un `<datalist>` debe estar asociado a un elemento `<input>` mediante el atributo `list`. Cuando el usuario comienza a escribir en el campo de entrada, el navegador muestra las opciones disponibles en la lista asociada, permitiendo al usuario elegir una de ellas.
+
+El **atributo `label`** se utiliza para especificar una etiqueta que describa el grupo de opciones. Esta etiqueta es lo que se mostrará al usuario para identificar el grupo.
+
+```html
+<form>
+  <label for="fruits">Choose a fruit:</label>
+  <input type="text" id="fruits" list="fruit-list">
+  <datalist id="fruit-list">
+    <option value="Apple">
+    <option value="Banana">
+    <option value="Cherry">
+    <option value="Date">
+    <option value="Grape">
+    <option value="Kiwi">
+  </datalist>
+</form>
+```
+
+En este ejemplo, el usuario puede comenzar a escribir en el campo de texto y se le mostrarán sugerencias de frutas basadas en las opciones definidas en el `<datalist>`. Esto hace que la entrada de datos sea más rápida y sencilla.
+
+El contenido de un elemento `<datalist>` puede ser generado dinámicamente desde el backend. Esto es especialmente útil si deseas que la lista de opciones dependa de datos almacenados en una base de datos o de la lógica de tu aplicación.
 
 ### Elemento `<textarea>`
 
@@ -1427,15 +1549,67 @@ La forma de asociar el elemento `<label>` con el campo es medidante el atributo 
 
 ### Elemento `<output>`
 
-[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/form-elements.html#the-output-element)
+El [elemento `<output>`](https://html.spec.whatwg.org/dev/form-elements.html#the-output-element) se utiliza para **mostrar el resultado** de un cálculo o la salida de un formulario. Es particularmente útil en situaciones donde los usuarios interactúan con formularios y se requiere mostrar resultados dinámicamente, como cálculos de totales, resultados de evaluaciones, o cualquier dato que dependa de la entrada del usuario.
+
+Este elemento se beneficia de su semántica, ya que indica claramente que el contenido mostrado es el resultado de una acción o cálculo, mejorando la accesibilidad y la comprensión del contenido.
+
+El **atributo `for`** especifica los elementos de formulario cuyos valores se utilizan para calcular el resultado mostrado en el `<output>`. Este atributo permite asociar el `<output>` a uno o más controles de formulario.
+
+```html
+<form oninput="result.value=parseInt(a.value) + parseInt(b.value)">
+  <label for="a">A: <input type="number" id="a" value="0"></label>
+  <label for="b">B: <input type="number" id="b" value="0"></label>
+  <output name="result" for="a b">0</output>
+</form>
+```
+
+En este ejemplo, el `<output>` muestra la suma de los valores introducidos en los campos A y B. A medida que el usuario ingresa datos, el resultado se actualiza dinámicamente, proporcionando una experiencia interactiva.
 
 ### Elemento `<progress>`
 
-[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/form-elements.html#the-progress-element)
+El [elemento `<progress>`](https://html.spec.whatwg.org/dev/form-elements.html#the-progress-element) se utiliza para mostrar **el progreso de una tarea en curso**. Es ideal para representar visualmente el avance de acciones que requieren tiempo, como la carga de archivos, la descarga de datos, o el progreso de una operación en una aplicación web.
+
+Este elemento es especialmente útil porque proporciona una indicación clara y comprensible del estado de una tarea, mejorando la experiencia del usuario.
+
+- El **atributo `value`** especifica el progreso actual de la tarea. Este valor debe estar entre 0 y el valor máximo.
+
+- El **atributo `max`** define el valor máximo de progreso. Si no se especifica, el valor por defecto es 1.
+
+```html
+<form>
+  <label for="fileUpload">Uploading file:</label>
+  <progress id="fileUpload" value="0.6" max="1"></progress>
+</form>
+```
+
+En este ejemplo, el `<progress>` muestra que la tarea de carga de un archivo está al 60% de progreso. Esto permite a los usuarios ver de manera visual cuánto queda para completar la operación.
 
 ### Elemento `<meter>`
 
-[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/form-elements.html#the-meter-element)
+El [elemento `<meter>`](https://html.spec.whatwg.org/dev/form-elements.html#the-meter-element) se utiliza para representar **un valor escalar dentro de un rango conocido**, como puede ser una medida de rendimiento o progreso. Es comúnmente utilizado para mostrar datos como el nivel de batería, el progreso de una tarea, o el nivel de un recurso.
+
+Este elemento proporciona una forma visual de representar datos que pueden ser interpretados fácilmente por los usuarios, mejorando así la experiencia de interacción con el formulario.
+
+- **`value`**: especifica el valor actual que se está midiendo.
+
+- **`min`**: establece el valor mínimo que puede representar el `<meter>`. Si no se especifica, el valor por defecto es 0.
+
+- **`max`**: establece el valor máximo que puede representar el `<meter>`. Si no se especifica, el valor por defecto es 100.
+
+- **`low`**: indica el valor que se considera bajo dentro del rango. Cuando el valor actual es inferior a este, el indicador puede mostrarse en un color diferente.
+
+- **`high`**: indica el valor que se considera alto dentro del rango. Similar al atributo low, puede cambiar la representación visual si el valor actual supera este umbral.
+
+- **`optimum`**: define el valor óptimo dentro del rango, que podría marcarse de manera especial en la visualización.
+
+```html
+<form>
+  <label for="battery">Battery Level:</label>
+  <meter id="battery" value="70" min="0" max="100" low="20" high="80" optimum="50"></meter>
+</form>
+```
+
+En este ejemplo, el `<meter>` representa un nivel de batería del 70%, con indicadores de bajo (20%), alto (80%) y óptimo (50%). Esto permite al usuario entender rápidamente la condición del nivel de batería.
 
 ## Recursos multimedia embebidos
 
