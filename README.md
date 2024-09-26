@@ -1314,7 +1314,7 @@ Los elementos HTML relacionados con formularios pueden utilizar diversos atribut
 
 - **`id`**: identifica de forma única el campo dentro del formulario.
 
-- **`name`**: asigna un nombre al campo, que se utilizará al recuperar los datos enviados.
+- **`name`**: define el nombre del campo, necesario para enviar el valor al hacer _submit_ del formulario y que se utilizará para recuperar los datos enviados.
 
 - **`autocomplete`**: permite el autocompletado de los campos.
 
@@ -1468,11 +1468,78 @@ Los navegadores modernos proporcionan validación automática para tipos como `e
 
 ### Elemento `<button>`
 
-[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/form-elements.html#the-button-element)
+El [elemento `<button>`](https://html.spec.whatwg.org/dev/form-elements.html#the-button-element) se utiliza para crear **botones interactivos** en un formulario o en otras partes de una página web. A diferencia del elemento `<input type="submit">`, el elemento `<button>` permite incluir contenido HTML adicional dentro de él, como texto, imágenes o iconos.
+
+Existen tres tipos principales de botones que se pueden especificar mediante el atributo `type`:
+
+- **`<button type="submit">`**: envía el formulario al servidor. Este es el valor por defecto si no se especifica ningún type.
+
+- **`<button type="reset">`**: restablece todos los campos del formulario a sus valores iniciales.
+
+- **`<button type="button">`**: no tiene un comportamiento por defecto, lo que lo convierte en un botón genérico que puede utilizarse para realizar acciones mediante JavaScript.
+
+Además, se pueden aplicar varios atributos comunes, como `disabled`, `autofocus`, y `name`.
+
+```html
+<form method="post" action="process.php">
+  <button type="submit">Enviar</button>
+  <button type="reset">Restablecer</button>
+  <button type="button" onclick="alert('Botón genérico')">Haz clic aquí</button>
+</form>
+```
+
+El contenido de los botones puede incluir texto e incluso imágenes, lo que hace al `<button>` más flexible que los elementos `<input>` de tipo botón:
+
+```html
+<button type="submit">
+  <img src="icono.png" alt="Enviar"> Enviar
+</button>
+```
 
 ### Elemento `<select>`
 
-[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/form-elements.html#the-select-element)
+El [elemento `<select>`](https://html.spec.whatwg.org/dev/form-elements.html#the-select-element) se utiliza para crear **un menú desplegable** en un formulario, donde el usuario puede elegir una o más opciones de una lista.
+
+Las opciones dentro de un elemento `<select>` se definen mediante el elemento `<option>`. También se puede agrupar un conjunto de opciones relacionadas usando `<optgroup>`.
+
+- **`multiple`** (booleano): permite la selección de múltiples opciones si se establece.
+
+- **`size`**: especifica cuántas opciones se deben mostrar a la vez. Si no se establece, el menú se muestra como un desplegable.
+
+```html
+<form method="post" action="process.php">
+  <label for="colors">Choose a color:</label>
+  <select id="colors" name="color">
+    <option value="red">Red</option>
+    <option value="blue">Blue</option>
+    <option value="green">Green</option>
+  </select>
+  <button type="submit">Submit</button>
+</form>
+```
+
+En caso de usar el atributo `multiple`, los datos se enviarán al servidor en forma de array. Para gestionar esto correctamente en el servidor, es recomendable añadir corchetes (`[]`) al nombre del campo:
+
+```html
+<select name="hobbies[]" multiple>
+  <option value="leer">Leer</option>
+  <option value="cocinar">Cocinar</option>
+  <option value="programar">Programar</option>
+</select>
+```
+
+Si el usuario selecciona varias opciones, el servidor recibirá un array con todas las opciones elegidas, como por ejemplo:
+
+```php
+Array
+(
+  [hobbies] => Array
+    (
+      [0] => leer
+      [1] => programar
+    )
+)
+```
 
 ### Elemento `<optgroup>`
 
@@ -1499,13 +1566,11 @@ El **atributo `label`** especifica una etiqueta que describe el grupo de opcione
 
 El [elemento `<option>`](https://html.spec.whatwg.org/dev/form-elements.html#the-option-element) se utiliza dentro de los elementos `<select>` y `<optgroup>` para definir **las opciones que un usuario puede seleccionar**. Cada `<option>` representa una única elección dentro de un conjunto.
 
-- El **atributo `value`** especifica el valor que se enviará al servidor cuando se selecciona la opción.
+- **`value`** especifica el valor que se enviará al servidor cuando se selecciona la opción.
 
-- El **atributo `label`** permite especificar una etiqueta alternativa que se mostrará en la lista desplegable. Esto puede ser útil si deseas que el usuario vea un texto diferente al valor que se enviará.
+- **`label`** permite especificar una etiqueta alternativa que se mostrará en la lista desplegable. Esto puede ser útil si deseas que el usuario vea un texto diferente al valor que se enviará.
 
-- El **atributo `selected`** (booleano) indica que la opción debe estar seleccionada por defecto cuando se carga el formulario.
-
-- El **atributo `disabled`** (booleano) desactiva la opción, impidiendo que el usuario la seleccione.
+- **`selected`** (booleano) indica que la opción debe estar seleccionada por defecto cuando se carga el formulario.
 
 ```html
 <select>
@@ -1545,7 +1610,28 @@ El contenido de un elemento `<datalist>` puede ser generado dinámicamente desde
 
 ### Elemento `<textarea>`
 
-[Más información en el documento "HTML: The Living Standard"](https://html.spec.whatwg.org/dev/form-elements.html#the-textarea-element)
+El [elemento `<textarea>`](https://html.spec.whatwg.org/dev/form-elements.html#the-textarea-element) se utiliza en los formularios HTML para permitir **la entrada de texto en varias líneas**. A diferencia del elemento `<input>`, que se usa para una sola línea de texto, `<textarea>` está diseñado para capturar grandes bloques de texto.
+
+- **`cols`**: define el número de columnas visibles (el ancho) del área de texto.
+
+- **`rows`**: define el número de filas visibles (la altura) del área de texto.
+
+- **`maxlength`**: establece el número máximo de caracteres que se pueden ingresar.
+
+- **`wrap`**: define cómo se manejarán las líneas largas:
+  
+  - **`soft`**: las líneas no se dividen al enviar el formulario.
+  
+  - **`hard`**: las líneas se dividen y los saltos de línea se envían como parte del valor.
+
+```html
+<form>
+  <label for="comments">Comentarios:</label>
+  <textarea id="comments" name="comments" rows="4" cols="50" placeholder="Escriba aquí sus comentarios..."></textarea>
+</form>
+```
+
+A diferencia del campo `<input>`, el contenido del campo `<textarea>` va entre las etiquetas de apertura y cierre del elemento, lo que permite mostrar contenido predefinido.
 
 ### Elemento `<output>`
 
@@ -1571,9 +1657,9 @@ El [elemento `<progress>`](https://html.spec.whatwg.org/dev/form-elements.html#t
 
 Este elemento es especialmente útil porque proporciona una indicación clara y comprensible del estado de una tarea, mejorando la experiencia del usuario.
 
-- El **atributo `value`** especifica el progreso actual de la tarea. Este valor debe estar entre 0 y el valor máximo.
+- **`value`** especifica el progreso actual de la tarea. Este valor debe estar entre 0 y el valor máximo.
 
-- El **atributo `max`** define el valor máximo de progreso. Si no se especifica, el valor por defecto es 1.
+- **`max`** define el valor máximo de progreso. Si no se especifica, el valor por defecto es 1.
 
 ```html
 <form>
