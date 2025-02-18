@@ -1793,12 +1793,40 @@ El proceso de validación se puede realizar a través de la herramienta oficial 
 
 ---
 
-## Referencias
+## Enlaces
 
-- <https://html.spec.whatwg.org/>
-- <https://www.w3.org/TR/>
-- <https://htmlreference.io/>
+### HTML5
+
+- 🔸 [HTML Specification](https://html.spec.whatwg.org/)
+- [W3C standards and drafts](https://www.w3.org/TR/)
+- 👓 [Awesome - A curated list of awesome HTML5 resources](https://github.com/diegocard/awesome-html5)
+
+### HTML5 - Learning
+
+- ⭐⭐ [htmlreference.io - A free guide to all HTML elements and attributes.](https://htmlreference.io/)
+- <https://developer.mozilla.org/en-US/docs/Web/HTML>
+- 🇪🇸 <https://lenguajehtml.com/html/>
+- <https://w3schools.com/html/>
 - <https://cheatsheets.zip/>
+- <https://internetingishard.netlify.app/html-and-css/>
+- <https://theodinproject.com/>
+- <https://roadmap.sh/frontend>
+- <https://html.com/>
+- <https://cheatsheets.shecodes.io/html>
+- <https://overapi.com/html>
+- <https://htmlcheatsheet.com/>
+- <https://devhints.io/>
+- 📕 <https://goalkicker.com/HTML5Book/>
+- 📕 <https://goalkicker.com/HTML5CanvasBook/>
+- <https://web.dev/learn/html>
+
+### HTML5 - Other
+
+- ["Can I use"](https://caniuse.com/)
+- [HTML5 Please - Look up HTML5, CSS3, etc features, know if they are ready for use](https://html5please.com/)
+- [HTML5 Boilerplate - The web’s most popular front-end template](https://html5boilerplate.com/)
+- [Modernizr: the feature detection library for HTML5/CSS3](https://modernizr.com/)
+- [htmx is a library that allows you to access modern browser features directly from HTML](https://htmx.org/)
 
 ## Licencia
 
